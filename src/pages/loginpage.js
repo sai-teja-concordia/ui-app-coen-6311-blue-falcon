@@ -26,7 +26,7 @@ function LoginPage() {
       <header  className="LoginPage-header" >
         <img src={logo} className="LoginPage-logo" alt="logo" />
         <p>
-          Welcome to Unified social Media
+          Welcome to Unified social Media App
         </p>
         <div className="loginbutton">
           <LoginButton />

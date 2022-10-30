@@ -1,6 +1,6 @@
 import { doGet, doPost } from "./webUtils"
 
-const baseUrl = "http://3.83.104.158:8080"
+const baseUrl = "https://unified-server.herokuapp.com"
 
 
 export const getUserDetails = async (email) => {
@@ -8,7 +8,7 @@ export const getUserDetails = async (email) => {
 }
 
 export const saveUserDetails = async (body) => {
-    console.log("saveing details");
+    console.log("saving details");
     console.log("body",body)
     return await doPost(baseUrl + "/unified/v1/users", body);
 }
