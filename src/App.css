@@ -55,6 +55,9 @@
 .LoginPage-link {
   color: #74000f;
 }
+.gapi.signInButton{
+  color: #74000f;
+}
 
 
 @keyframes LoginPage-logo-spin {

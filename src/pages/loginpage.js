@@ -25,7 +25,7 @@ function LoginPage() {
   return (
     
       <header   >
-        <img src={background} className="loginbackground "width="1400" height="550" alt="background"/>
+        <img src={background} className="loginbackground "width="1400" height="600" alt="background"/>
         
         <p className="loginpara">
           Welcome to
