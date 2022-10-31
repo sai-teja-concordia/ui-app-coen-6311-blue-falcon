@@ -15,24 +15,41 @@
   width: 50%;
   padding: 10px;
 }
+.loginbutton{
+  position:fixed;
+  bottom:50px;
+  right:580px;
+  border: 3px solid #000000;
+  
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .LoginPage-logo {
     animation: LoginPage-logo-spin infinite 20s linear;
   }
 }
+.loginbackground{
+  opacity: 0.9; 
+  filter: contrast(1.75);
+  
+} 
 
-.LoginPage-header {
-  background-color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.loginpara{
+  font-size: calc(10px + 4vmin);
+  color: rgb(0, 0, 0);
+  position:fixed;
+  top: 40px;
+  left: 605px;
+}
+.loginpara2{
   font-size: calc(15px + 6vmin);
   color: rgb(0, 0, 0);
-  background-image: url(./static/background_1.jpg);
+  position:fixed;
+  top: 70px;
+  right: 370px;
 }
+
+
 
 
 .LoginPage-link {
