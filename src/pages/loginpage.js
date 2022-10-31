@@ -1,4 +1,4 @@
-import logo from '../static/ulogo.jpg';
+
 import background from '../static/background_1.jpg';
 import '../App.css';
 import {LoginButton} from "../components/login";
