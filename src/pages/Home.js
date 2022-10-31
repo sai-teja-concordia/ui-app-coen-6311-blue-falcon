@@ -13,7 +13,7 @@ function Home() {
     }
     welcomeMessage = welcomeMessage + localStorage.getItem('name')
     console.log(welcomeMessage)
-    
+      
 
   return (
     <div>
