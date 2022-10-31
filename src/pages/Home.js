@@ -13,6 +13,7 @@ function Home() {
     }
     welcomeMessage = welcomeMessage + localStorage.getItem('name')
     console.log(welcomeMessage)
+    
 
   return (
     <div>
@@ -39,7 +40,7 @@ function Home() {
       <div className="logout">
         <LogoutButton /> 
       </div> */}
-                     
+         
     </div>
     
   );
