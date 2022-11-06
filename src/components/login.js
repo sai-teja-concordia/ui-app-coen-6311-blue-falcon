@@ -52,12 +52,15 @@ function LoginButton(){
         
         <div id= "signInButton">
            <GoogleLogin
+              
+              
               clientId={clientId}
               buttonText="Login with Google"
               onSuccess={onSucess}
               onFailure={onFailure}
               cookiePolicy={'single_host_origin'}
               isSignedIn={true}
+              
            />
            
         </div>

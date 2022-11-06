@@ -1,4 +1,5 @@
-import logo from '../globe.svg';
+
+import background from '../static/background_1.jpg';
 import '../App.css';
 import {LoginButton} from "../components/login";
 
@@ -22,20 +23,25 @@ function LoginPage() {
  
 
   return (
-    <div  className="LoginPage" >
-      <header  className="LoginPage-header" >
-        <img src={logo} className="LoginPage-logo" alt="logo" />
-        <p>
-          Welcome to Unified social Media App
+    
+      <header   >
+        <img src={background} className="loginbackground "width="1400" height="600" alt="background"/>
+        
+        <p className="loginpara">
+          Welcome to
+        </p>
+        <p className="loginpara2">
+          Unified social Media App
         </p>
         <div className="loginbutton">
           <LoginButton />
         </div>
       </header>      
-    </div>
+    
     
   );
 }
 
 
 export default LoginPage;
+/*..*/
