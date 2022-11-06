@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import countries from "countries-list";
 
 let welcomeMessage
 
@@ -13,36 +14,14 @@ function Home() {
     }
     welcomeMessage = welcomeMessage + localStorage.getItem('name')
     console.log(welcomeMessage)
-      
+
+    console.log(countries.countries);
 
   return (
     <div>
       <Header></Header>
       <div className='content'><h1>{welcomeMessage}</h1></div>
-      {/* <Navbar></Navbar> */}
-      {/* <img src={image_url} className="home-image" alt="logo" />
-      <div classname="home-header">
-      This is your home page
-      
-      </div>
-    <div>
-    {welcomeMessage}
     </div>
-    <div>
-      Name: {first_name} {last_name}
-    </div>
-    
-    
-    <div>
-    mail:{mail}
-
-    </div>
-      <div className="logout">
-        <LogoutButton /> 
-      </div> ..*/}
-         
-    </div>
-    
   );
 }
 

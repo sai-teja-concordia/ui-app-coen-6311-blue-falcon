@@ -42,7 +42,10 @@ export default function Header() {
       >
         <nav className="Nav">
           <a href="/Home">Home</a>
-          {/* <a href="/profile">Profile</a> */}
+          <a href="/profile">
+            <img alt="Qries" src="https://www.qries.com/images/banner_logo.png"/>
+
+            </a>
           {/* <div className="logout"> */}
         <LogoutButton /> 
       {/* </div> */}
