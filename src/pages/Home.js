@@ -39,7 +39,7 @@ function Home() {
     </div>
       <div className="logout">
         <LogoutButton /> 
-      </div> */}
+      </div> ..*/}
          
     </div>
     
