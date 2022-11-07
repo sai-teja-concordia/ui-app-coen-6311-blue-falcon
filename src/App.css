@@ -68,6 +68,13 @@
   color: #61dafb;
 }
 
+.loginbackground {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  object-fit: cover; 
+}
 
 
 /*..*/
