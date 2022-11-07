@@ -28,13 +28,13 @@ function LoginPage() {
       <div className='loginpage'>
         
         <img src={background} className="loginbackground "width="1400" height="600" alt="background"/>
-          <form className='loginbox'>
+          <div className='loginbox'>
             <div className="loginbutton">
               <LoginButton />
             </div>
             
             
-          </form>
+          </div>
           <text className="loginpara">
               Welcome to
             </text>
