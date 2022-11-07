@@ -68,7 +68,9 @@
 }
 
 .loginbackground {
-  width: 100%;
+  height:100vh;
+  width:220vh;
+
   overflow: hidden;
   display: flex;
   justify-content: center;
