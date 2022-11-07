@@ -5,7 +5,7 @@ import {LoginButton} from "../components/login";
 
 import { useEffect} from 'react';
 import { gapi } from 'gapi-script';
-import { Form } from 'react-router-dom';
+
 
 
 const clientId="257151779582-a1360hlmj2h92fuv79albkgrf9j6qn20.apps.googleusercontent.com";
@@ -39,7 +39,7 @@ function LoginPage() {
               Welcome to
             </text>
             <text className="loginpara2">
-               Unified social Media
+               Unified Social Media
             </text>
             <text className="loginpara3">
                To stay connected

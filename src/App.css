@@ -29,20 +29,7 @@
   bottom: 200px;
   right:70px;
  
- 
 }
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .LoginPage-logo {
-    animation: LoginPage-logo-spin infinite 20s linear;
-  }
-}
-.loginbackground{
-  opacity: 0.9; 
-  filter: contrast(1.75);
-  
-} 
 
 .loginpara{
   font-size: 25px;
@@ -66,37 +53,6 @@
   right: 90px;
 }
 
-
-
-
-.LoginPage-link {
-  color: #74000f;
-}
-.gapi.signInButton{
-  color: #74000f;
-}
-
-
-@keyframes LoginPage-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -112,13 +68,6 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 /*..*/
