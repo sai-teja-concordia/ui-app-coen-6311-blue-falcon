@@ -9,6 +9,7 @@ const clientId="257151779582-a1360hlmj2h92fuv79albkgrf9j6qn20.apps.googleusercon
 function LoginButton(){
     const [logstat, setlogstat]= React.useState(false);
     const onSucess= async (response) =>  {
+       
         let profile = response.profileObj;
         console.log("response"  , response);
         console.log("Google Login Sucess! Current user:", profile);
@@ -53,7 +54,7 @@ function LoginButton(){
         <div id= "signInButton">
            <GoogleLogin
               
-              
+              theme= 'dark'
               clientId={clientId}
               buttonText="Login with Google"
               onSuccess={onSucess}

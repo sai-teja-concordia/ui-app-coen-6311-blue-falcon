@@ -19,13 +19,10 @@
   position:fixed;
   bottom:50px;
   right:580px;
-  border: 3px solid #000000;
+ 
  
 }
-.loginbutton2{
- color:blue;
- 
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .LoginPage-logo {
