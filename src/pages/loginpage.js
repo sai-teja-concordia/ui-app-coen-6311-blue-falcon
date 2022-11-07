@@ -28,21 +28,23 @@ function LoginPage() {
       <div className='loginpage'>
         <img src={background} className="loginbackground"/>
           <div className='loginbox'>
+            
+            <div className="welcome-to-text">
+              Welcome to
+            </div>
+            <div className="app-name">
+               Unified Social Media
+            </div>
             <div className="loginbutton">
               <LoginButton />
+            </div>
+            <div className="stay-connected-text">
+               To stay connected
             </div>
             
             
           </div>
-          <text className="loginpara">
-              Welcome to
-            </text>
-            <text className="loginpara2">
-               Unified Social Media
-            </text>
-            <text className="loginpara3">
-               To stay connected
-            </text>
+          
             
         
 
