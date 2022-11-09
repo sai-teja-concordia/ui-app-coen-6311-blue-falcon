@@ -24,6 +24,15 @@
   width: 50%;
   padding: 10px;
 }
+
+.country_sel {
+
+  text-align: center;
+  margin: auto;
+  width: auto;
+  padding: auto;
+}
+
 .loginbutton{
   padding-bottom: 5%;
   padding-left: 20%;
