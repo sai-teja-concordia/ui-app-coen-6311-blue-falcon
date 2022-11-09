@@ -6,7 +6,7 @@ import { saveUserDetails } from '../utils/user';
 
 const clientId="257151779582-a1360hlmj2h92fuv79albkgrf9j6qn20.apps.googleusercontent.com";
 
-
+let responseFromServer
 function LoginButton(){
     const [logstat, setlogstat]= React.useState(false);
     const onSucess= async (response) =>  {
@@ -14,8 +14,9 @@ function LoginButton(){
         let profile = response.profileObj;
         console.log("response"  , response);
         console.log("Google Login Sucess! Current user:", profile);
-        let responseFromServer = await getUserDetails(profile.email)
+        responseFromServer = await getUserDetails(profile.email)
         console.log("response from server: ",responseFromServer)
+        
 
         if (responseFromServer.data) {
             console.log("old user");
@@ -43,6 +44,7 @@ function LoginButton(){
             
 
         setlogstat(true)
+        
     
     }
     const onFailure=(res) =>{
@@ -51,13 +53,14 @@ function LoginButton(){
     console.log('logstat - ', logstat)
     if (logstat){
         console.log("Navigating to home")
-        if ( localStorage.getItem('isNewUser')){
-            return <Navigate to="/Newuser" />
+        if(responseFromServer.data){
+        return <Navigate to="/Home" />
         }
-       
         else{
-            return <Navigate to="/Home" />
+        return <Navigate to="/Newuser" />
         }
+        
+       
     }
     
     return(
