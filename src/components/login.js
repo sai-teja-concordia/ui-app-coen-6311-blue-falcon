@@ -6,6 +6,7 @@ import { saveUserDetails } from '../utils/user';
 
 const clientId="257151779582-a1360hlmj2h92fuv79albkgrf9j6qn20.apps.googleusercontent.com";
 
+
 function LoginButton(){
     const [logstat, setlogstat]= React.useState(false);
     const onSucess= async (response) =>  {
@@ -37,6 +38,10 @@ function LoginButton(){
         localStorage.setItem('name', profile.name)
         localStorage.setItem('imageUrl', profile.imageUrl)
 
+        /*..*/
+        
+            
+
         setlogstat(true)
     
     }
@@ -46,7 +51,13 @@ function LoginButton(){
     console.log('logstat - ', logstat)
     if (logstat){
         console.log("Navigating to home")
-        return <Navigate to="/Home" />
+        if ( localStorage.getItem('isNewUser')){
+            return <Navigate to="/Newuser" />
+        }
+       
+        else{
+            return <Navigate to="/Home" />
+        }
     }
     
     return(

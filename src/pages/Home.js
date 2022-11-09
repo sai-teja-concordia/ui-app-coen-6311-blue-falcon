@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../components/Header';
 import countries from "countries-list";
 
+import {Navigate} from "react-router-dom";
+
 let welcomeMessage
 
 function Home() {    
@@ -11,6 +13,7 @@ function Home() {
     }
     else  {
       welcomeMessage= "Welcome, "
+      return <Navigate to="/Newuser" />
     }
     welcomeMessage = welcomeMessage + localStorage.getItem('name')
     console.log(welcomeMessage)
