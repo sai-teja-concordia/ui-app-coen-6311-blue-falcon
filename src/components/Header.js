@@ -27,7 +27,8 @@ export default function Header() {
       setIsSmallScreen(false);
     }
   };
-
+  let userProfilePic = localStorage.getItem('imageUrl')
+  console.log(userProfilePic)
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);
   };
@@ -43,8 +44,14 @@ export default function Header() {
         <nav className="Nav">
           <a href="/Home">Home</a>
           <a href="/profile">
-            <img alt="Qries" src="https://www.qries.com/images/banner_logo.png"/>
-
+          <img 
+              src={userProfilePic}
+              alt="profile"
+              style={{
+                borderRadius: "100%",
+                width: "50%"
+              }}
+              />
             </a>
           {/* <div className="logout"> */}
         <LogoutButton /> 
