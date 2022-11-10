@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { CSSTransition } from "react-transition-group";
 import LogoutButton from "../components/logout";
-import {Navigate} from "react-router-dom";
 
 
 export default function Header() {
