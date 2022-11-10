@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import EditableLabel from 'react-inline-editing';
+import { updateUserDetails } from '../utils/user';
 
 class Profile extends React.Component {
     constructor(props){
@@ -21,6 +22,12 @@ class Profile extends React.Component {
 
     _handleFocusOut(text) {
         console.log('Left editor with text: ' + text);
+        let user = {}
+        user.name = text
+        user.emailId = this.email
+        console.log(user);
+        localStorage.setItem("name", text)
+        updateUserDetails(user)
         // TODO save in DB
     }
     render() {
