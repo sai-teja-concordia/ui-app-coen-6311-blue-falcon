@@ -41,7 +41,7 @@ function Home() {
         <div className="Carousel-1">
         <div><text className='Carousel-text1'>sports</text></div>
         <Carousel breakPoints={breakPoints}>
-          <Item> <img src={background} width="300" height="200"/><text>soccer</text></Item>
+          <Item> <img src={background} width="250" height="200"/><text>soccer</text></Item>
           <Item>cricket</Item>
           <Item>Three</Item>
           <Item>Four</Item>
@@ -57,7 +57,7 @@ function Home() {
       <div><text className='Carousel-text2'>science</text></div>
         <Carousel breakPoints={breakPoints}>
           
-          <Item> <img src={background} width="300" height="200" /> <text>space</text></Item>
+          <Item> <img src={background} width="250" height="200" /> <text>space</text></Item>
           <Item>nuclear</Item>
           <Item>Three</Item>
           <Item>Four</Item>
