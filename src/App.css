@@ -104,9 +104,9 @@
   font-family: sans-serif;
   
   
-  height: 50vh;
+  height: 55vh;
   width:50%;
-  
+
   float: left;
 }
 .Carousel-2 {
@@ -115,5 +115,20 @@
   float: right;
  
   height: 50vh;
+  
  
+}
+.Carousel-text1{
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  
+  padding-top: 5%;
+  padding-left: 10%;
+}
+.Carousel-text2{
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  
+  padding-top: 5%;
+  padding-left: 10%;
 }

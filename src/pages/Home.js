@@ -5,7 +5,7 @@ import countries from "countries-list";
 import { Navigate } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
-import background from '../static/background_3.jpg';
+import background from '../static/background_4.jpg';
 let welcomeMessage;
 
 const breakPoints = [
@@ -39,10 +39,10 @@ function Home() {
           <h1>{welcomeMessage}</h1>
         </div>
         <div className="Carousel-1">
-          
+        <div><text className='Carousel-text1'>sports</text></div>
         <Carousel breakPoints={breakPoints}>
-          <Item> <img src={background} className="loginbackground"/></Item>
-          <Item>Two</Item>
+          <Item> <img src={background} width="300" height="200"/><text>soccer</text></Item>
+          <Item>cricket</Item>
           <Item>Three</Item>
           <Item>Four</Item>
           <Item>Five</Item>
@@ -52,11 +52,13 @@ function Home() {
         </Carousel>
         
       </div>
+      
       <div className="Carousel-2">
-          
+      <div><text className='Carousel-text2'>science</text></div>
         <Carousel breakPoints={breakPoints}>
-          <Item> <img src={background} className="loginbackground"/> <text>world</text></Item>
-          <Item>Two</Item>
+          
+          <Item> <img src={background} width="300" height="200" /> <text>space</text></Item>
+          <Item>nuclear</Item>
           <Item>Three</Item>
           <Item>Four</Item>
           <Item>Five</Item>
