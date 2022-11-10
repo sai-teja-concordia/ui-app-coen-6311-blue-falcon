@@ -55,7 +55,7 @@ function Home() {
       <div className="Carousel-2">
           
         <Carousel breakPoints={breakPoints}>
-          <Item> <img src={background} className="loginbackground"/></Item>
+          <Item> <img src={background} className="loginbackground"/> <text>world</text></Item>
           <Item>Two</Item>
           <Item>Three</Item>
           <Item>Four</Item>
