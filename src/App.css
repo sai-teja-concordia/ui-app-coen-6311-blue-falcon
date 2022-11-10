@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.profileTable{
+  margin: 100px;
+  width: 50%;
+  padding: 10px;
+}
 
 .loginbox{
   position:fixed;

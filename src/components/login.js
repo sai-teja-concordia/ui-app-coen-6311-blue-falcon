@@ -38,14 +38,7 @@ function LoginButton(){
         localStorage.setItem('givenName', profile.givenName)
         localStorage.setItem('name', profile.name)
         localStorage.setItem('imageUrl', profile.imageUrl)
-
-        /*..*/
-        
-            
-
         setlogstat(true)
-        
-    
     }
     const onFailure=(res) =>{
         console.log("LOGIN FAILED! res", res);

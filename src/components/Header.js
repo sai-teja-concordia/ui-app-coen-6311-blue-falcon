@@ -27,6 +27,7 @@ export default function Header() {
       setIsSmallScreen(false);
     }
   };
+  let name = localStorage.getItem('givenName')
   let userProfilePic = localStorage.getItem('imageUrl')
   console.log(userProfilePic)
   const toggleNav = () => {
@@ -43,19 +44,17 @@ export default function Header() {
       >
         <nav className="Nav">
           <a href="/Home">Home</a>
-          <a href="/profile">
+          <a href="/Profile">
           <img 
               src={userProfilePic}
-              alt="profile"
+              alt={name}
               style={{
                 borderRadius: "100%",
                 width: "50%"
               }}
               />
             </a>
-          {/* <div className="logout"> */}
         <LogoutButton /> 
-      {/* </div> */}
         </nav>
       </CSSTransition>
     </header>

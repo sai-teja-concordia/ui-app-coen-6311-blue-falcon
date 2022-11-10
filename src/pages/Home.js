@@ -14,7 +14,7 @@ function Home() {
     }
     else  {
       welcomeMessage= "Welcome, "
-      return <Navigate to="/Newuser" />
+      // return <Navigate to="/Newuser" />
     }
     welcomeMessage = welcomeMessage + localStorage.getItem('name')
     console.log(welcomeMessage)
