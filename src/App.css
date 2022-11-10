@@ -100,10 +100,20 @@
 /*..*/
 /*new user page css*/
 
-.Carousel {
+.Carousel-1 {
   font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  
+  
+  height: 50vh;
+  width:50%;
+  
+  float: left;
+}
+.Carousel-2 {
+  font-family: sans-serif;
+  width:50%;
+  float: right;
+ 
+  height: 50vh;
+ 
 }

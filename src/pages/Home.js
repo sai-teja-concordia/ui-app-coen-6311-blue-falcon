@@ -5,7 +5,7 @@ import countries from "countries-list";
 import { Navigate } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
-
+import background from '../static/background_3.jpg';
 let welcomeMessage;
 
 const breakPoints = [
@@ -38,10 +38,10 @@ function Home() {
         <div className="content">
           <h1>{welcomeMessage}</h1>
         </div>
-        <div className="Carousel">
+        <div className="Carousel-1">
           
         <Carousel breakPoints={breakPoints}>
-          <Item>One</Item>
+          <Item> <img src={background} className="loginbackground"/></Item>
           <Item>Two</Item>
           <Item>Three</Item>
           <Item>Four</Item>
@@ -50,6 +50,21 @@ function Home() {
           <Item>Seven</Item>
           <Item>Eight</Item>
         </Carousel>
+        
+      </div>
+      <div className="Carousel-2">
+          
+        <Carousel breakPoints={breakPoints}>
+          <Item> <img src={background} className="loginbackground"/></Item>
+          <Item>Two</Item>
+          <Item>Three</Item>
+          <Item>Four</Item>
+          <Item>Five</Item>
+          <Item>Six</Item>
+          <Item>Seven</Item>
+          <Item>Eight</Item>
+        </Carousel>
+        
       </div>
 
         
