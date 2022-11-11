@@ -29,7 +29,15 @@ function Home() {
     welcomeMessage = welcomeMessage + localStorage.getItem("name");
     console.log(welcomeMessage);
     console.log(countries.countries);
-  
+
+    
+    let listOfNews = [
+      {id: "id", title: 'item #1', url: "https://www.google.com",urlToImage: background, author: "Srikanth", description: "description", content: "content", "publishedAtEpoch": 1668192430 ,sourceName: "sourceName1"},
+      {id: "id", title: 'item #2', url: "https://www.google.com",urlToImage: background, author: "Srikanth", description: "description", content: "content", "publishedAtEpoch": 1668192430 ,sourceName: "sourceName1"},
+      {id: "3", title: 'item #3', url: "https://www.google.com",urlToImage: background, author: "Srikanth", description: "description", content: "content", "publishedAtEpoch": 1668192430 ,sourceName: "sourceName1"},
+      {id: "4", title: 'item #4', url: "https://www.google.com",urlToImage: background, author: "Srikanth", description: "description", content: "content", "publishedAtEpoch": 1668192430 ,sourceName: "sourceName1"},
+      {id: "5", title: 'item #5', url: "https://www.google.com",urlToImage: background, author: "Srikanth", description: "description", content: "content", "publishedAtEpoch": 1668192430 ,sourceName: "sourceName1"}
+    ]
 
   
     return (
@@ -41,6 +49,8 @@ function Home() {
         <div className="Carousel-1">
         <div><text className='Carousel-text1'>sports</text></div>
         <Carousel breakPoints={breakPoints}>
+          {listOfNews.map(item => <Item id = {item.id}> <img src={item.urlToImage} width="250" height="200"></img> {item.title}</Item>)}
+{/* 
           <Item> <img src={background} width="250" height="200"/><text>soccer</text></Item>
           <Item>cricket</Item>
           <Item>Three</Item>
@@ -48,8 +58,9 @@ function Home() {
           <Item>Five</Item>
           <Item>Six</Item>
           <Item>Seven</Item>
-          <Item>Eight</Item>
+          <Item>Eight</Item> */}
         </Carousel>
+
         
       </div>
       
