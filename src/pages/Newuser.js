@@ -8,8 +8,11 @@ class Newuser extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      welcomeMessage : ""
+      welcomeMessage : "",
+      countries: [],
+		  colours: {}
     }
+
     console.log(`localStorage.getItem('isNewUser') - ${localStorage.getItem('isNewUser')}`);
     if (localStorage.getItem('isNewUser') === 'false') {
         this.welcomeMessage ="Welcome back! "
@@ -48,10 +51,25 @@ class Newuser extends React.Component {
 
   
   render() {
+
+    const { countries } = this.state;
+
+	let countriesList = countries.length > 0
+		&& countries.map((item, i) => {
+		return (
+			<option key={i} value={item.id}>{item.name}</option>
+		)
+	}, this);
+  
       return  <div>
                 <Header></Header>
                 <div className='content'><h1>{this.welcomeMessage}</h1></div>
-                <div className='country_sel'><h1>{"Select Country"}</h1></div>
+                <div className='country_sel'>
+                  <h1>{"Select Country"}</h1>
+                  <select>
+				            {countriesList}
+			            </select>
+                </div>
               </div>
   }
 }
