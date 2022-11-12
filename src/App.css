@@ -87,12 +87,12 @@
 }
 
 .loginbackground {
-  height:100vh;
-  width:220vh;
+  height:99vh;
+  width:100%;
 
   overflow: hidden;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   object-fit: cover; 
 }
 
