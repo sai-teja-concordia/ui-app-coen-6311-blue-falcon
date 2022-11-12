@@ -114,14 +114,14 @@
   
   
   height: 55vh;
-  width:50%;
+  width:100%;
 
-  float: left;
+  /* float: left; */
 }
 .Carousel-2 {
   font-family: sans-serif;
-  width:50%;
-  float: right;
+  width:100%;
+  /* float: right; */
  
   height: 50vh;
   
@@ -140,17 +140,21 @@
   color: rgb(0, 0, 0);
   
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 .Carousel-text2{
   font-size: 50px;
   color: rgb(0, 0, 0);
   
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 .trendnews-text{
   font-size: 50px;
 
+}
+.News-categories-headline{
+  font-size: 50px;
+  padding-left: 5%;
 }

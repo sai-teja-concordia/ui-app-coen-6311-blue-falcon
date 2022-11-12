@@ -16,8 +16,6 @@ const breakPoints = [
   { width: 1200, itemsToShow: 2 },
 ];
 
-
-
 function Home() {
   console.log(
     `localStorage.getItem('isNewUser') - ${localStorage.getItem("isNewUser")}`
@@ -31,8 +29,6 @@ function Home() {
   welcomeMessage = welcomeMessage + localStorage.getItem("name");
   console.log(welcomeMessage);
   console.log(countries.countries);
-
-  
 
   let listOftrendnews = [
     {
@@ -207,22 +203,38 @@ function Home() {
     },
   ];
 
-  let trendingnews=[
+  let categorynews = [
     <div>
-       <div>
+      <div className="Carousel-1">
+        <div>
+          <text className="Carousel-text1">Sports</text>
+        </div>
+        <Carousel breakPoints={breakPoints}>
+          {listOfNews.map((item) => (
+            <Item id={item.id}>
+              {" "}
+              <img src={item.urlToImage} width="250" height="200"></img>{" "}
+              {item.title}
+            </Item>
+          ))}
+        </Carousel>
+      </div>
+
+      <div className="Carousel-2">
+        <div>
           <text className="Carousel-text2">Science</text>
         </div>
-    <Carousel breakPoints={breakPoints}>
-            {listOfNews2.map((item) => (
-              <Item id={item.id}>
-                <img src={item.urlToImage} width="250" height="200"></img>{" "}
-                {item.title}
-              </Item>
-            ))}
-    </Carousel>
-    </div>
-    
-   ];
+        <Carousel breakPoints={breakPoints}>
+          {listOfNews2.map((item) => (
+            <Item id={item.id}>
+              <img src={item.urlToImage} width="250" height="200"></img>{" "}
+              {item.title}
+            </Item>
+          ))}
+        </Carousel>
+      </div>
+    </div>,
+  ];
   // const listItems = trendingnews.map((trendingnews) =>
   // <li>{trendingnews}</li>
   //  );
@@ -254,25 +266,8 @@ function Home() {
           ))}
         </Carousel>
       </div>
-      <div className="Carousel-1">
-        <div>
-          <text className="Carousel-text1">Sports</text>
-        </div>
-        <Carousel breakPoints={breakPoints}>
-          {listOfNews.map((item) => (
-            <Item id={item.id}>
-              {" "}
-              <img src={item.urlToImage} width="250" height="200"></img>{" "}
-              {item.title}
-            </Item>
-          ))}
-        </Carousel>
-      </div>
-
-      <div className="Carousel-2">
-        
-        {trendingnews}
-      </div>
+      <text className="News-categories-headline">News Categories</text>
+      {categorynews}
     </div>
   );
 }
