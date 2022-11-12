@@ -15,6 +15,7 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
+const catnum=2;
 
 function Home() {
   console.log(
@@ -30,63 +31,7 @@ function Home() {
   console.log(welcomeMessage);
   console.log(countries.countries);
 
-  let listOftrendnews = [
-    {
-      id: "id",
-      title: "item #1",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "id",
-      title: "item #2",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "3",
-      title: "item #3",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "4",
-      title: "item #4",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "5",
-      title: "item #5",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-  ];
+  
 
   let listOfNews = [
     {
@@ -145,71 +90,29 @@ function Home() {
       sourceName: "sourceName1",
     },
   ];
-  let listOfNews2 = [
+  let category_func=[
     {
-      id: "id",
-      title: "item #1",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
+      category: "sports",
     },
     {
-      id: "id",
-      title: "item #2",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
+      category:"science",
     },
     {
-      id: "3",
-      title: "item #3",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "4",
-      title: "item #4",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "5",
-      title: "item #5",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-  ];
+      category:"hollywood",
+    }
 
-  let categorynews = [
+  ];
+  
+
+  let categorynews = (
     <div>
+      {category_func.map((cat) =>(
       <div className="Carousel-1">
         <div>
-          <text className="Carousel-text1">Sports</text>
+          <text className="Carousel-text1">{cat.category}</text>
         </div>
-        <Carousel breakPoints={breakPoints}>
+        
+          <Carousel breakPoints={breakPoints}>
           {listOfNews.map((item) => (
             <Item id={item.id}>
               {" "}
@@ -218,23 +121,14 @@ function Home() {
             </Item>
           ))}
         </Carousel>
-      </div>
-
-      <div className="Carousel-2">
-        <div>
-          <text className="Carousel-text2">Science</text>
         </div>
-        <Carousel breakPoints={breakPoints}>
-          {listOfNews2.map((item) => (
-            <Item id={item.id}>
-              <img src={item.urlToImage} width="250" height="200"></img>{" "}
-              {item.title}
-            </Item>
-          ))}
-        </Carousel>
-      </div>
-    </div>,
-  ];
+
+        ))}      
+        
+      
+
+    </div>
+  );
   // const listItems = trendingnews.map((trendingnews) =>
   // <li>{trendingnews}</li>
   //  );
@@ -251,7 +145,7 @@ function Home() {
           <text className="Carousel-text0">Trending News</text>
         </div>
         <Carousel breakPoints={breakPoints}>
-          {listOftrendnews.map((item) => (
+          {listOfNews.map((item) => (
             <Item>
               <Item2 id={item.id}>
                 <img src={item.urlToImage} width="250" height="150"></img>
@@ -268,6 +162,7 @@ function Home() {
       </div>
       <text className="News-categories-headline">News Categories</text>
       {categorynews}
+      {/* {categorynews} */}
     </div>
   );
 }
