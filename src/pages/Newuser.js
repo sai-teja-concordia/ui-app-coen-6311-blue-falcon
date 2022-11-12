@@ -7,12 +7,18 @@ import { getLocationDetails } from '../utils/commonUtils';
 class Newuser extends React.Component {
   constructor(props){
     super(props);
+    let coutriesTempList = []
+    for (let [key, value] of Object.entries(countries.countries) ) {
+      let country = {}
+      country.id = key
+      country.name = value.name
+      coutriesTempList.push(country)
+    }
     this.state = {
       welcomeMessage : "",
-      countries: [],
+      countriesList: coutriesTempList,
 		  colours: {}
     }
-
     console.log(`localStorage.getItem('isNewUser') - ${localStorage.getItem('isNewUser')}`);
     if (localStorage.getItem('isNewUser') === 'false') {
         this.welcomeMessage ="Welcome back! "
@@ -23,7 +29,7 @@ class Newuser extends React.Component {
       }
       this.welcomeMessage = this.welcomeMessage + localStorage.getItem('name')
       console.log(this.welcomeMessage)
-      console.log(countries.countries);
+
       if ("geolocation" in navigator && !localStorage.getItem('country')) {
         navigator.geolocation.getCurrentPosition( async function(position, props) {
           let lat = position.coords.latitude;
@@ -42,24 +48,17 @@ class Newuser extends React.Component {
       }
       console.log("last");
   }
-
-  async getPosition() {
-    return new Promise((resolve, reject) => 
-        navigator.geolocation.getCurrentPosition(resolve, reject)
-    );
-}
-
   
   render() {
 
-    const { countries } = this.state;
-
-	let countriesList = countries.length > 0
-		&& countries.map((item, i) => {
-		return (
-			<option key={i} value={item.id}>{item.name}</option>
-		)
-	}, this);
+    const { countriesList } = this.state;
+    console.log(countriesList);
+    let countriesListOptions = countriesList.length > 0
+      && countriesList.map((item, i) => {
+      return (
+        <option key={i} value={item.id}>{item.name}</option>
+      )
+    }, this);
   
       return  <div>
                 <Header></Header>
@@ -67,7 +66,7 @@ class Newuser extends React.Component {
                 <div className='country_sel'>
                   <h1>{"Select Country"}</h1>
                   <select>
-				            {countriesList}
+				            {countriesListOptions}
 			            </select>
                 </div>
               </div>
