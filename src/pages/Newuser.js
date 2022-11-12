@@ -1,32 +1,56 @@
 import React from 'react';
 import Header from '../components/Header';
 import countries from "countries-list";
+import { getLocationDetails } from '../utils/commonUtils';
 
-
-let welcomeMessage
 
 class Newuser extends React.Component {
   constructor(props){
     super(props);
-
+    this.state = {
+      welcomeMessage : ""
+    }
     console.log(`localStorage.getItem('isNewUser') - ${localStorage.getItem('isNewUser')}`);
     if (localStorage.getItem('isNewUser') === 'false') {
-        welcomeMessage ="Welcome back! "
+        this.welcomeMessage ="Welcome back! "
       }
       else  {
-        welcomeMessage= "Welcome, "
+        this.welcomeMessage= "Welcome, "
       
       }
-      welcomeMessage = welcomeMessage + localStorage.getItem('name')
-      console.log(welcomeMessage)
+      this.welcomeMessage = this.welcomeMessage + localStorage.getItem('name')
+      console.log(this.welcomeMessage)
       console.log(countries.countries);
+      if ("geolocation" in navigator && !localStorage.getItem('country')) {
+        navigator.geolocation.getCurrentPosition( async function(position, props) {
+          let lat = position.coords.latitude;
+          let long = position.coords.longitude;
+          console.log(position)
+          console.log("Latitude is :", lat);
+          console.log("Longitude is :", long);
+          let country = await getLocationDetails(lat, long)
+          localStorage.setItem('country', country)
+          // window.location.reload(false);
+        });
+        console.log("Available");
+      } else {
+        this.welcomeMessage = this.welcomeMessage + `. Your country is ${localStorage.getItem('country')}`
+        console.log("Not Available");
+      }
+      console.log("last");
   }
+
+  async getPosition() {
+    return new Promise((resolve, reject) => 
+        navigator.geolocation.getCurrentPosition(resolve, reject)
+    );
+}
 
   
   render() {
       return  <div>
                 <Header></Header>
-                <div className='content'><h1>{welcomeMessage}</h1></div>
+                <div className='content'><h1>{this.welcomeMessage}</h1></div>
                 <div className='country_sel'><h1>{"Select Country"}</h1></div>
               </div>
   }

@@ -23,6 +23,9 @@ function LoginButton(){
             console.log(responseFromServer.data);
             localStorage.setItem('isNewUser', false);
             localStorage.setItem('name', responseFromServer.data.name)
+            localStorage.setItem('id', responseFromServer.data.id)
+            localStorage.setItem('country', responseFromServer.data.location)
+            // localStorage.setItem()
         } else {
             console.log("new user");
             console.log(responseFromServer.data);
@@ -33,6 +36,7 @@ function LoginButton(){
             let responseToServer=await saveUserDetails(user)
             console.log("saved details response: ",responseToServer)
             localStorage.setItem('name', profile.name)
+            localStorage.setItem('id', responseToServer.data.id)
         }
         console.log(localStorage);
         localStorage.setItem('email', profile.email)
