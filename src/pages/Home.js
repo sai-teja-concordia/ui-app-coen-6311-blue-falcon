@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import countries from "countries-list";
 
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
 import Item2 from "../components/items2";
@@ -15,7 +15,7 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
-const catnum=2;
+
 
 function Home() {
   console.log(
@@ -92,13 +92,13 @@ function Home() {
   ];
   let category_func=[
     {
-      category: "sports",
+      category: "Sports",
     },
     {
-      category:"science",
+      category:"Science",
     },
     {
-      category:"hollywood",
+      category:"Hollywood",
     }
 
   ];
@@ -116,7 +116,7 @@ function Home() {
           {listOfNews.map((item) => (
             <Item id={item.id}>
               {" "}
-              <img src={item.urlToImage} width="250" height="200"></img>{" "}
+              <img src={item.urlToImage} width="250" height="200" alt=""></img>{" "}
               {item.title}
             </Item>
           ))}
@@ -148,7 +148,7 @@ function Home() {
           {listOfNews.map((item) => (
             <Item>
               <Item2 id={item.id}>
-                <img src={item.urlToImage} width="250" height="150"></img>
+                <img src={item.urlToImage} width="250" height="150" alt=""></img>
                 {item.content}
               </Item2>
 
