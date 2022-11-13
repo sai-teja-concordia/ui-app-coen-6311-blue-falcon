@@ -87,48 +87,74 @@
 }
 
 .loginbackground {
-  height:100vh;
-  width:220vh;
+  height:99vh;
+  width:100%;
 
   overflow: hidden;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   object-fit: cover; 
 }
 
 
 /*..*/
-/*new user page css*/
+/*Homepahe carousal .css*/
+.Carousel-trendingnews {
+  font-family: sans-serif;
+  
+  
+  height: 60vh;
+  width:100%;
+
+  
+}
 
 .Carousel-1 {
   font-family: sans-serif;
   
   
   height: 55vh;
-  width:50%;
+  width:100%;
 
-  float: left;
+  /* float: left; */
 }
 .Carousel-2 {
   font-family: sans-serif;
-  width:50%;
-  float: right;
+  width:100%;
+  /* float: right; */
  
   height: 50vh;
   
  
+}
+
+.Carousel-text0{
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+    
+  padding-top: 5%;
+  padding-left: 5%;
 }
 .Carousel-text1{
   font-size: 50px;
   color: rgb(0, 0, 0);
   
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 .Carousel-text2{
   font-size: 50px;
   color: rgb(0, 0, 0);
   
   padding-top: 5%;
-  padding-left: 10%;
+  padding-left: 5%;
+}
+
+.trendnews-text{
+  font-size: 50px;
+
+}
+.News-categories-headline{
+  font-size: 50px;
+  padding-left: 5%;
 }
