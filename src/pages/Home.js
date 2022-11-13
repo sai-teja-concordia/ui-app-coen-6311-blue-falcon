@@ -14,9 +14,7 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
-let responsefromnewsserver;
 function Home() {
-  responsefromnewsserver = getUsertrendingnews(country).then;
   let listOfNews = [
     {
       id: "id",

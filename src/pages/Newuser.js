@@ -5,7 +5,18 @@ import { getLocationDetails } from '../utils/commonUtils';
 import { updateUserDetails } from '../utils/user';
 import { FormControlLabel, Checkbox } from '@mui/material';
 import { Navigate, Redirect } from "react-router-dom";
-import background from "../static/background_4.jpg";
+
+import sportsIcon from "../static/sports.png";
+import foodIcon from "../static/food.png";
+import entertainmentIcon from "../static/entertainment.png";
+import politicsIcon from "../static/politics.png";
+import worldIcon from "../static/world.png";
+import environmentIcon from "../static/environment.png";
+import businessIcon from "../static/business.png";
+import technologyIcon from "../static/technology.png";
+import healthIcon from "../static/health.png";
+import scienceIcon from "../static/science.png";
+
 
 
 class Newuser extends React.Component {
@@ -89,7 +100,7 @@ class Newuser extends React.Component {
     this.updateCountry(params.target.value)
   }
 
-  checkBoxUpdate(event) {
+  async checkBoxUpdate(event) {
     if (event && event.target) {
       let value = event.target.value
       let checked = event.target.checked
@@ -146,7 +157,7 @@ class Newuser extends React.Component {
         <h1>{this.welcomeMessage}</h1>
         <div className='country_sel'>
           <h3>Select your country</h3>
-          <select value={this.state.selectedCountry} onChange={this.countrySelect}>
+          <select class="minimal" value={this.state.selectedCountry} onChange={this.countrySelect}>
             {countriesListOptions}
           </select>
         </div>
@@ -159,8 +170,8 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="sports" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
-                  sports
+                  <img src={sportsIcon} key="sports" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <text>sports</text>
                 </React.Fragment>
               }
             />
@@ -172,7 +183,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="food" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={foodIcon} key="food" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   food
                 </React.Fragment>
               }
@@ -185,7 +196,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="entertainment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={entertainmentIcon} key="entertainment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   entertainment
                 </React.Fragment>
               }
@@ -198,7 +209,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="politics" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={politicsIcon} key="politics" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   politics
                 </React.Fragment>
               }
@@ -211,7 +222,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="world" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={worldIcon} key="world" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   world
                 </React.Fragment>
               }
@@ -224,7 +235,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="environment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={environmentIcon} key="environment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   environment
                 </React.Fragment>
               }
@@ -237,7 +248,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="business" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={businessIcon} key="business" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   business
                 </React.Fragment>
               }
@@ -250,7 +261,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="technology" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={technologyIcon} key="technology" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   technology
                 </React.Fragment>
               }
@@ -263,7 +274,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="health" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={healthIcon} key="health" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   health
                 </React.Fragment>
               }
@@ -276,7 +287,7 @@ class Newuser extends React.Component {
               }
               label={
                 < React.Fragment >
-                  <img src={background} key="science" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                  <img src={scienceIcon} key="science" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                   science
                 </React.Fragment>
               }

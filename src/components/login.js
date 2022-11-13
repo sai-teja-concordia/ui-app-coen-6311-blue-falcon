@@ -22,6 +22,10 @@ function LoginButton() {
             console.log("old user");
             console.log(responseFromServer.data);
             localStorage.setItem('isNewUser', false);
+            let selectedCategories = responseFromServer.data.userInterests
+            console.log(`Favourite Categories after - ${selectedCategories} `);
+            localStorage.setItem("selectedCategories", selectedCategories)
+
             localStorage.setItem('name', responseFromServer.data.name)
             localStorage.setItem('id', responseFromServer.data.id)
             localStorage.setItem('country', responseFromServer.data.location)

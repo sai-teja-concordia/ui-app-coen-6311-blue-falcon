@@ -4,12 +4,21 @@ import EditableLabel from 'react-inline-editing';
 import { updateUserDetails } from '../utils/user';
 import countries from "countries-list";
 import { FormControlLabel, Checkbox } from '@mui/material';
-import background from "../static/background_4.jpg";
+import sportsIcon from "../static/sports.png";
+import foodIcon from "../static/food.png";
+import entertainmentIcon from "../static/entertainment.png";
+import politicsIcon from "../static/politics.png";
+import worldIcon from "../static/world.png";
+import environmentIcon from "../static/environment.png";
+import businessIcon from "../static/business.png";
+import technologyIcon from "../static/technology.png";
+import healthIcon from "../static/health.png";
+import scienceIcon from "../static/science.png";
+
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-
         let coutriesTempList = []
         for (let [key, value] of Object.entries(countries.countries)) {
             let country = {}
@@ -131,7 +140,7 @@ class Profile extends React.Component {
             <Header></Header>
             <div className='profileTable'>
                 <div><img src={this.userProfilePic} alt={this.name} style={{ borderRadius: "100%" }} /></div>
-                <div><h2>{this.email}</h2></div>
+                <div><h3>{this.email}</h3></div>
                 <div>
                     <EditableLabel text={this.name}
                         labelClassName='profileItem'
@@ -155,8 +164,8 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="sports" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
-                                    sports
+                                    <img src={sportsIcon} key="sports" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <text>sports</text>
                                 </React.Fragment>
                             }
                         />
@@ -168,7 +177,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="food" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={foodIcon} key="food" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     food
                                 </React.Fragment>
                             }
@@ -181,7 +190,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="entertainment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={entertainmentIcon} key="entertainment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     entertainment
                                 </React.Fragment>
                             }
@@ -194,7 +203,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="politics" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={politicsIcon} key="politics" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     politics
                                 </React.Fragment>
                             }
@@ -207,7 +216,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="world" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={worldIcon} key="world" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     world
                                 </React.Fragment>
                             }
@@ -220,7 +229,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="environment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={environmentIcon} key="environment" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     environment
                                 </React.Fragment>
                             }
@@ -233,7 +242,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="business" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={businessIcon} key="business" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     business
                                 </React.Fragment>
                             }
@@ -246,7 +255,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="technology" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={technologyIcon} key="technology" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     technology
                                 </React.Fragment>
                             }
@@ -259,7 +268,7 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="health" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={healthIcon} key="health" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     health
                                 </React.Fragment>
                             }
@@ -272,16 +281,15 @@ class Profile extends React.Component {
                             }
                             label={
                                 < React.Fragment >
-                                    <img src={background} key="science" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
+                                    <img src={scienceIcon} key="science" className="profile-img" width="40px" height="auto" style={{ marginRight: "5px" }} />
                                     science
                                 </React.Fragment>
                             }
                         />
                     </li>
                 </ul>
-
+                <a href="/Home" >Done!</a>
             </div>
-
         </div>
     }
 }
