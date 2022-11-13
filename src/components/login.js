@@ -80,3 +80,4 @@ function LoginButton() {
   );
 }
 export { LoginButton };
+export { responsefromnewsserver };

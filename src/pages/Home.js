@@ -18,66 +18,7 @@ const breakPoints = [
 function Home() {
   // responsefromnewsserver = getUsertrendingnews(country).then;
   console.log(responsefromnewsserver);
-  let listOfNews = [
-    // responsefromnewsserver.data.newslist,
-    {
-      id: "id",
-      title:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "id",
-      title: "item #2",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "3",
-      title: "item #3",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "4",
-      title: "item #4",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "5",
-      title: "item #5",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-  ];
+
   let category_func = [
     {
       category: "Sports",
