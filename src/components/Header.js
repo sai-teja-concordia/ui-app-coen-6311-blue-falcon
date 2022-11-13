@@ -34,7 +34,7 @@ export default function Header() {
   };
   return (
     <header className="Header">
-      <a className="Uni">Unified Social Media</a>
+      <a className="Uni" href="/Home">Unified Social Media</a>
       {/* <img src={require("../assets/logo.png")} className="Logo" alt="logo" /> */}
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
@@ -42,13 +42,13 @@ export default function Header() {
         classNames="NavAnimation"
         unmountOnExit
       >
-        
-        
-        
+
+
+
         <nav className="Nav">
-      
-        {/* <a className="Uni">Unified Social Media</a> */}
-          <a href="/Home">Home</a>
+
+          {/* <a className="Uni">Unified Social Media</a> */}
+          {/* <a href="/Home">Home</a> */}
           <a href="/Profile">
             <img
               src={userProfilePic}
@@ -59,7 +59,7 @@ export default function Header() {
               }}
             />
           </a>
-          
+
           <LogoutButton />
         </nav>
       </CSSTransition>
