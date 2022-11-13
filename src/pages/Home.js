@@ -6,7 +6,7 @@ import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
 import Item2 from "../components/items2";
 import background from "../static/background_4.jpg";
-import { getUsertrendingnews } from "../utils/user";
+import { responsefromnewsserver } from "../components/login";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -14,10 +14,12 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
-let responsefromnewsserver;
+
 function Home() {
   // responsefromnewsserver = getUsertrendingnews(country).then;
+  console.log(responsefromnewsserver);
   let listOfNews = [
+    // responsefromnewsserver.data.newslist,
     {
       id: "id",
       title:
@@ -242,7 +244,7 @@ function Home() {
           <text className="Carousel-text0">Trending News</text>
         </div>
         <Carousel breakPoints={breakPoints}>
-          {listOfNews.map((item) => (
+          {responsefromnewsserver.data.newsList.map((item) => (
             <Item>
               <Item2 id={item.id}>
                 <img
@@ -257,7 +259,9 @@ function Home() {
               <Item2 id={item.id}>
                 <text className="news-title">{item.title}</text>
 
-                <a href={item.url}>Read more</a>
+                <a href={item.url} target="_blank" rel="noreferrer">
+                  Read more
+                </a>
               </Item2>
             </Item>
           ))}
