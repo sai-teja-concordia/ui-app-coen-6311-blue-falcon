@@ -44,16 +44,16 @@ export default function Header() {
         <nav className="Nav">
           <a href="/Home">Home</a>
           <a href="/Profile">
-          <img 
+            <img
               src={userProfilePic}
               alt={name}
               style={{
                 borderRadius: "100%",
                 width: "50%"
               }}
-              />
-            </a>
-        <LogoutButton /> 
+            />
+          </a>
+          <LogoutButton />
         </nav>
       </CSSTransition>
     </header>

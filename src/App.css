@@ -29,14 +29,19 @@
   
 }
 
+.categories-list {
+  list-style-type: none;
+  text-align: left;
+}
 .content {
+  text-align: center;
   margin: 100px;
   width: 50%;
   padding: 10px;
 }
 
 .country_sel {
-
+  padding: 10px;
   text-align: center;
   margin: auto;
   width: auto;

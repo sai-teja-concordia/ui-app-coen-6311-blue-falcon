@@ -31,7 +31,7 @@ function Home() {
   console.log(welcomeMessage);
   console.log(countries.countries);
 
-  
+
 
   let listOfNews = [
     {
@@ -90,42 +90,42 @@ function Home() {
       sourceName: "sourceName1",
     },
   ];
-  let category_func=[
+  let category_func = [
     {
       category: "Sports",
     },
     {
-      category:"Science",
+      category: "Science",
     },
     {
-      category:"Hollywood",
+      category: "Hollywood",
     }
 
   ];
-  
+
 
   let categorynews = (
     <div>
-      {category_func.map((cat) =>(
-      <div className="Carousel-1">
-        <div>
-          <text className="Carousel-text1">{cat.category}</text>
-        </div>
-        
+      {category_func.map((cat) => (
+        <div className="Carousel-1">
+          <div>
+            <text className="Carousel-text1">{cat.category}</text>
+          </div>
+
           <Carousel breakPoints={breakPoints}>
-          {listOfNews.map((item) => (
-            <Item id={item.id}>
-              {" "}
-              <img src={item.urlToImage} width="250" height="200" alt=""></img>{" "}
-              {item.title}
-            </Item>
-          ))}
-        </Carousel>
+            {listOfNews.map((item) => (
+              <Item id={item.id}>
+                {" "}
+                <img src={item.urlToImage} width="250" height="200" alt=""></img>{" "}
+                {item.title}
+              </Item>
+            ))}
+          </Carousel>
         </div>
 
-        ))}      
-        
-      
+      ))}
+
+
 
     </div>
   );

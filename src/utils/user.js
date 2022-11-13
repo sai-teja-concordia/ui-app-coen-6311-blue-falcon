@@ -4,7 +4,7 @@ const baseUrl = "https://unified-server.herokuapp.com"
 // const baseUrl = "http://localhost:8080"
 
 export const getUserDetails = async (email) => {
-    return await doGet(baseUrl + "/unified/v1/users?emailId="+ email)
+    return await doGet(baseUrl + "/unified/v1/users?emailId=" + email)
 }
 
 export const updateUserDetails = async (body) => {
