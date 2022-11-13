@@ -18,9 +18,6 @@ const breakPoints = [
 
 
 function Home() {
-  
-
-
 
   let listOfNews = [
     {
@@ -102,21 +99,21 @@ function Home() {
           </div>
 
           <Carousel breakPoints={breakPoints}>
-          {listOfNews.map((item) => (
-            <Item>
-              <Item2 id={item.id}>
-                <img src={item.urlToImage} width="250" height="150" alt=""></img>
-                <text  className= "news-content">{item.content}</text>
-              </Item2>
+            {listOfNews.map((item) => (
+              <Item>
+                <Item2 id={item.id}>
+                  <img src={item.urlToImage} width="250" height="150" alt=""></img>
+                  <text className="news-content">{item.content}</text>
+                </Item2>
 
-              <Item2  id={item.id}>
-                 <text  className= "news-title">{item.title}</text>
-                                 
-                <a href={item.url}>Read more</a>
-              </Item2>
-            </Item>
-          ))}
-        </Carousel>
+                <Item2 id={item.id}>
+                  <text className="news-title">{item.title}</text>
+
+                  <a href={item.url}>Read more</a>
+                </Item2>
+              </Item>
+            ))}
+          </Carousel>
         </div>
 
       ))}
@@ -145,12 +142,12 @@ function Home() {
             <Item>
               <Item2 id={item.id}>
                 <img src={item.urlToImage} width="250" height="150" alt=""></img>
-                <text  className= "news-content">{item.content}</text>
+                <text className="news-content">{item.content}</text>
               </Item2>
 
-              <Item2  id={item.id}>
-                 <text  className= "news-title">{item.title}</text>
-                                 
+              <Item2 id={item.id}>
+                <text className="news-title">{item.title}</text>
+
                 <a href={item.url}>Read more</a>
               </Item2>
             </Item>
