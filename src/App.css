@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.profileTable{
+.profileTable {
   padding: 30px;
   margin-top: 10%;
   margin-left: 30%;
@@ -10,23 +10,24 @@
   display: block;
   text-align: center;
   border: 3px solid #3b5998;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.loginbox{
-  position:fixed;
-  top:100px;
-  right:10px;
+.loginbox {
+  position: fixed;
+  top: 100px;
+  right: 10px;
   height: 300px;
   width: 300px;
-  padding:3px;
+  padding: 3px;
   border-radius: 25px;
-  box-shadow:11px, 12px, 13px, 12px, rgb(35, 87, 182) ;
+  box-shadow: 11px, 12px, 13px, 12px, rgb(35, 87, 182);
   background-color: rgb(240, 247, 250);
 }
-.loginpage{
+.loginpage {
   background-color: rgb(241, 235, 235);
-  
 }
 
 .categories-list {
@@ -50,28 +51,26 @@
   padding: auto;
 }
 
-.loginbutton{
+.loginbutton {
   padding-bottom: 5%;
   padding-left: 20%;
   padding-top: 35%;
- 
 }
 
-.welcome-to-text{
+.welcome-to-text {
   font-size: 25px;
   color: rgb(0, 0, 0);
-  
+
   padding-top: 5%;
   padding-left: 25%;
-  
 }
-.app-name{
+.app-name {
   font-size: 30px;
   color: rgb(0, 0, 0);
   padding-top: 5%;
   padding-left: 5%;
 }
-.stay-connected-text{
+.stay-connected-text {
   font-size: 15px;
   color: rgb(0, 0, 0);
   padding-bottom: 5%;
@@ -94,87 +93,78 @@
 }
 
 .loginbackground {
-  height:99vh;
-  width:100%;
+  height: 99vh;
+  width: 100%;
 
   overflow: hidden;
   /* display: flex; */
   /* justify-content: center; */
-  object-fit: cover; 
+  object-fit: cover;
 }
-
 
 /*..*/
 /*Homepahe carousal .css*/
 .Carousel-trendingnews {
   font-family: sans-serif;
-  
-  
-  height: 60vh;
-  width:100%;
 
-  
+  height: 70vh;
+  width: 100%;
 }
 
 .Carousel-1 {
   font-family: sans-serif;
-  
-  
+
   height: 55vh;
-  width:100%;
+  width: 100%;
 
   /* float: left; */
 }
 .Carousel-2 {
   font-family: sans-serif;
-  width:100%;
+  width: 100%;
   /* float: right; */
- 
+
   height: 50vh;
-  
- 
 }
 
-.Carousel-text0{
+.Carousel-text0 {
   font-size: 10vh;
   color: rgb(0, 0, 0);
-    
-  
+
   padding-left: 6%;
   padding-bottom: 5%;
 }
-.Carousel-text1{
+.Carousel-text1 {
   font-size: 8vh;
   color: rgb(0, 0, 0);
-  
+
   padding-top: 5%;
   padding-left: 6%;
 }
-.Carousel-text2{
+.Carousel-text2 {
   font-size: 50px;
   color: rgb(0, 0, 0);
-  
+
   padding-top: 5%;
   padding-left: 5%;
 }
 
-.trendnews-text{
+.trendnews-text {
   font-size: 50px;
-
 }
-.News-categories-headline{
+.News-categories-headline {
   font-size: 10vh;
   padding-left: 6%;
   color: rgb(0, 0, 0);
 }
 
-.news-title{
+.news-title {
   width: 40vh;
   /* writing-mode: horizontal-tb;  */
   height: 4vh;
 }
-.news-content{
+.news-content {
   width: 35vh;
-  
+
   height: 25vh;
 }

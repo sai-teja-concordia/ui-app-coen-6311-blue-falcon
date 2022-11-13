@@ -4,6 +4,7 @@ import Header from "../components/Header";
 // import { Navigate } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
+import Item1 from "../components/carousal-1-item";
 import Item2 from "../components/items2";
 import background from "../static/background_4.jpg";
 import { responsefromnewsserver } from "../components/login";
@@ -186,7 +187,7 @@ function Home() {
         </div>
         <Carousel breakPoints={breakPoints}>
           {responsefromnewsserver.data.newsList.map((item) => (
-            <Item>
+            <Item1>
               <Item2 id={item.id}>
                 <img
                   src={item.urlToImage}
@@ -204,7 +205,7 @@ function Home() {
                   Read more
                 </a>
               </Item2>
-            </Item>
+            </Item1>
           ))}
         </Carousel>
       </div>
