@@ -5,7 +5,7 @@
     width: 100vw;
   
     display: grid;
-    grid-template-areas: "logo nav";
+    grid-template-areas: " logo nav";
   
     /* Cosmetics */
     background-color: #3b5998;
@@ -16,6 +16,15 @@
     grid-area: logo;
     height: 70px;
   }
+  .Uni{
+    font-size:xx-large;
+    font-weight: bold;
+    color: #fff;
+    padding-left:15%;
+
+    height:1px;
+  }
+  
   
   .Nav {
     display: grid;
@@ -24,7 +33,9 @@
     align-items: center;
     justify-items: center;
     grid-area: none;
+    grid-template-areas: " logo nav";
   }
+  
   .Nav a {
     margin-right: -50px;
     color: #fff;
@@ -95,7 +106,4 @@
   }
   /*...*/
 
-  .nav1{
-    align-items:left;
-  }
   
