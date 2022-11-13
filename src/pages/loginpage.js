@@ -26,7 +26,7 @@ function LoginPage() {
   return (
 
     <div className='loginpage'>
-      <img src={background} className="loginbackground" />
+      <img src={background} className="loginbackground"  alt="background" />
       <div className='loginbox'>
 
         <div className="welcome-to-text">

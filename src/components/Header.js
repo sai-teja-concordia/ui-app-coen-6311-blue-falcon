@@ -41,7 +41,12 @@ export default function Header() {
         classNames="NavAnimation"
         unmountOnExit
       >
+        {/* <nav className="nav1">
+        <a>Unified Social Media</a>
+        </nav> */}
         <nav className="Nav">
+        {/* <a>Unified Social Media</a> */}
+          
           <a href="/Home">Home</a>
           <a href="/Profile">
             <img
@@ -53,6 +58,7 @@ export default function Header() {
               }}
             />
           </a>
+          
           <LogoutButton />
         </nav>
       </CSSTransition>

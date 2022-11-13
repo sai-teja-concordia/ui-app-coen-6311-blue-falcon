@@ -94,4 +94,8 @@
     transition: opacity 350ms, transform 350ms;
   }
   /*...*/
+
+  .nav1{
+    align-items:left;
+  }
   
