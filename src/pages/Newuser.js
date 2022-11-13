@@ -39,7 +39,7 @@ class Newuser extends React.Component {
           console.log("Longitude is :", long);
           let country = await getLocationDetails(lat, long)
           localStorage.setItem('country', country)
-          // window.location.reload(false);
+          window.location.reload(false);
         });
         console.log("Available");
       } else {
