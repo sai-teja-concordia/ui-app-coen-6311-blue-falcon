@@ -6,6 +6,7 @@ import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
 import Item2 from "../components/items2";
 import background from "../static/background_4.jpg";
+import { getUsertrendingnews } from "../utils/user";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -13,8 +14,9 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
-
+let responsefromnewsserver;
 function Home() {
+  responsefromnewsserver = getUsertrendingnews(country).then;
   let listOfNews = [
     {
       id: "id",
@@ -216,13 +218,13 @@ function Home() {
                   <text className="news-title">{item.title}</text>
 
                   <a href={item.url}>Read more</a>
-                </Item2 >
-              </Item >
+                </Item2>
+              </Item>
             ))}
-          </Carousel >
-        </div >
+          </Carousel>
+        </div>
       ))}
-    </div >
+    </div>
   );
   // const listItems = trendingnews.map((trendingnews) =>
   // <li>{trendingnews}</li>
@@ -250,22 +252,21 @@ function Home() {
                   alt=""
                 ></img>
                 <text className="news-content">{item.content}</text>
-              </Item2 >
+              </Item2>
 
               <Item2 id={item.id}>
                 <text className="news-title">{item.title}</text>
 
                 <a href={item.url}>Read more</a>
               </Item2>
-            </Item >
-          ))
-          }
-        </Carousel >
-      </div >
+            </Item>
+          ))}
+        </Carousel>
+      </div>
       <text className="News-categories-headline">News Categories</text>
       {categorynews}
       {/* {categorynews} */}
-    </div >
+    </div>
   );
 }
 
