@@ -16,7 +16,7 @@ const breakPoints = [
 ];
 let responsefromnewsserver;
 function Home() {
-  responsefromnewsserver = getUsertrendingnews(country).then;
+  // responsefromnewsserver = getUsertrendingnews(country).then;
   let listOfNews = [
     {
       id: "id",
