@@ -138,7 +138,8 @@ class Newuser extends React.Component {
     }
 
   }
-  creationDone() {
+  async creationDone() {
+
     console.log("done");
     return <Navigate to="/Home" />
   }

@@ -4,9 +4,10 @@ import Header from "../components/Header";
 // import { Navigate } from "react-router-dom";
 import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
+import Item1 from "../components/carousal-1-item";
 import Item2 from "../components/items2";
 import background from "../static/background_4.jpg";
-import { getUsertrendingnews } from "../utils/user";
+import { responsefromnewsserver } from "../components/login";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -14,66 +15,11 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
+
 function Home() {
-  let listOfNews = [
-    {
-      id: "id",
-      title:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "id",
-      title: "item #2",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "3",
-      title: "item #3",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "4",
-      title: "item #4",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-    {
-      id: "5",
-      title: "item #5",
-      url: "https://www.google.com",
-      urlToImage: background,
-      author: "Srikanth",
-      description: "description",
-      content: "content",
-      publishedAtEpoch: 1668192430,
-      sourceName: "sourceName1",
-    },
-  ];
+  let trendingNewsList = []
+  // let list = JSON.parse(localStorage.getItem("trendingNewsList"))
+  // console.log(`trendingNewsList  asf;jdlf - ${localStorage.getItem("trendingNewsList")}`)
   let category_func = [
     {
       category: "Sports",
@@ -240,8 +186,8 @@ function Home() {
           <text className="Carousel-text0">Trending News</text>
         </div>
         <Carousel breakPoints={breakPoints}>
-          {listOfNews.map((item) => (
-            <Item>
+          {trendingNewsList.map((item) => (
+            <Item1>
               <Item2 id={item.id}>
                 <img
                   src={item.urlToImage}
@@ -255,9 +201,11 @@ function Home() {
               <Item2 id={item.id}>
                 <text className="news-title">{item.title}</text>
 
-                <a href={item.url}>Read more</a>
+                <a href={item.url} target="_blank" rel="noreferrer">
+                  Read more
+                </a>
               </Item2>
-            </Item>
+            </Item1>
           ))}
         </Carousel>
       </div>
