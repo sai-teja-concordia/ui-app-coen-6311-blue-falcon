@@ -220,7 +220,12 @@ function Home() {
               <Item2 id={item.id}>
                 <text className="news-title">{item.title}</text>
 
-                <a href={item.url} target="_blank" rel="noreferrer">
+                <a
+                  className="Readmore"
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Read more
                 </a>
               </Item2>

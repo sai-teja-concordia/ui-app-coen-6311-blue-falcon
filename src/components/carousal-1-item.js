@@ -5,7 +5,7 @@ export default styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 50vh;
+  height: 300px;
   width: 90%;
   background-color: white;
   color: black;
