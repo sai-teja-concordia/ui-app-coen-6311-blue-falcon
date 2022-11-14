@@ -7,6 +7,8 @@ import Item from "../components/items";
 import Item1 from "../components/carousal-1-item";
 import Item2 from "../components/items2";
 import background from "../static/background_4.jpg";
+import trending from "../static/trend.png";
+
 import { getTrendingnews } from "../utils/newsUtils";
 
 const breakPoints = [
@@ -196,6 +198,8 @@ function Home() {
       <div className="Carousel-trendingnews">
         <div>
           <text className="Carousel-text0">Trending News</text>
+          <img className="trending-icon" src={trending} width="20"
+            height="20"></img>
         </div>
         <Carousel breakPoints={breakPoints}>
           {trendingNews.map((item) => (
@@ -204,10 +208,10 @@ function Home() {
                 <img
                   src={item.urlToImage}
                   width="250"
-                  height="150"
+                  height="200"
                   alt=""
                 ></img>
-                <text className="news-content">{item.content}</text>
+                <text className="news-content">{item.content || item.description}</text>
               </Item2>
 
               <Item2 id={item.id}>
