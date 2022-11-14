@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 
 // import { Navigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import Item from "../components/items";
 import Item1 from "../components/carousal-1-item";
 import Item2 from "../components/items2";
 import background from "../static/background_4.jpg";
-import { responsefromnewsserver } from "../components/login";
+import { getTrendingnews } from "../utils/newsUtils";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -17,9 +17,21 @@ const breakPoints = [
 ];
 
 function Home() {
-  let trendingNewsList = []
-  // let list = JSON.parse(localStorage.getItem("trendingNewsList"))
-  // console.log(`trendingNewsList  asf;jdlf - ${localStorage.getItem("trendingNewsList")}`)
+  const [trendingNews, setTrendingNews] = useState([]);
+  useEffect(() => {
+    let mounted = true;
+    let country = localStorage.getItem("country")
+    getTrendingnews(country)
+      .then(items => {
+        if (mounted && items.data && items.data.newsList) {
+          setTrendingNews(items.data.newsList)
+        }
+      })
+    return () => mounted = false;
+  }, [])
+
+  console.log("trendingNews - ");
+  console.log(trendingNews);
   let category_func = [
     {
       category: "Sports",
@@ -186,7 +198,7 @@ function Home() {
           <text className="Carousel-text0">Trending News</text>
         </div>
         <Carousel breakPoints={breakPoints}>
-          {trendingNewsList.map((item) => (
+          {trendingNews.map((item) => (
             <Item1>
               <Item2 id={item.id}>
                 <img
