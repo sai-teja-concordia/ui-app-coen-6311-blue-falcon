@@ -22,15 +22,14 @@ function Home() {
   const [trendingNews, setTrendingNews] = useState([]);
   useEffect(() => {
     let mounted = true;
-    let country = localStorage.getItem("country")
-    getTrendingnews(country)
-      .then(items => {
-        if (mounted && items.data && items.data.newsList) {
-          setTrendingNews(items.data.newsList)
-        }
-      })
-    return () => mounted = false;
-  }, [])
+    let country = localStorage.getItem("country");
+    getTrendingnews(country).then((items) => {
+      if (mounted && items.data && items.data.newsList) {
+        setTrendingNews(items.data.newsList);
+      }
+    });
+    return () => (mounted = false);
+  }, []);
 
   console.log("trendingNews - ");
   console.log(trendingNews);
@@ -155,9 +154,7 @@ function Home() {
     <div>
       {category_func.map((cat) => (
         <div className="Carousel-1">
-          <div>
-            <text className="Carousel-text1">{cat.category}</text>
-          </div>
+          <div className="Carousel-text1">{cat.category}</div>
 
           <Carousel breakPoints={breakPoints}>
             {cat.listofnews.map((item) => (
@@ -197,9 +194,13 @@ function Home() {
 
       <div className="Carousel-trendingnews">
         <div>
-          <text className="Carousel-text0">Trending News</text>
-          <img className="trending-icon" src={trending} width="20"
-            height="20"></img>
+          <div className="Carousel-text0">Trending News</div>
+          <img
+            className="trending-icon"
+            src={trending}
+            width="20"
+            height="20"
+          ></img>
         </div>
         <Carousel breakPoints={breakPoints}>
           {trendingNews.map((item) => (
@@ -211,7 +212,9 @@ function Home() {
                   height="200"
                   alt=""
                 ></img>
-                <text className="news-content">{item.content || item.description}</text>
+                <text className="news-content">
+                  {item.content || item.description}
+                </text>
               </Item2>
 
               <Item2 id={item.id}>
@@ -225,7 +228,7 @@ function Home() {
           ))}
         </Carousel>
       </div>
-      <text className="News-categories-headline">News Categories</text>
+      <div className="News-categories-headline">News Categories</div>
       {categorynews}
       {/* {categorynews} */}
     </div>
