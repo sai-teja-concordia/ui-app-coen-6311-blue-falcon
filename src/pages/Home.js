@@ -193,7 +193,7 @@ function Home() {
       </div>
 
       <div className="Carousel-trendingnews">
-        <div>
+        <div className="Carousel-text-image">
           <div className="Carousel-text0">Trending News</div>
           <img
             className="trending-icon"

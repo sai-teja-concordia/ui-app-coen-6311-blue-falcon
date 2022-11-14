@@ -242,6 +242,10 @@ select:-moz-focusring {
   padding-top: 5%;
   padding-left: 5%;
 }
+.Carousel-text-image {
+  display: flex;
+  flex-direction: row;
+}
 
 .trendnews-text {
   font-size: 50px;
