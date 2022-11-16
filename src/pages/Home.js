@@ -10,6 +10,7 @@ import background from "../static/background_4.jpg";
 import trending from "../static/trend.png";
 
 import { getTrendingnews } from "../utils/newsUtils";
+import { getCategorynews } from "../utils/newsUtils";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -33,6 +34,23 @@ function Home() {
 
   console.log("trendingNews - ");
   console.log(trendingNews);
+
+  const [categoryNews, setCategoryNews] = useState([]);
+  useEffect(() => {
+    let mounted = true;
+    let listOfCategories = localStorage.getItem("selectedCategories");
+    console.log("listOfCategories - ");
+    console.log(listOfCategories);
+    getCategorynews(listOfCategories).then((items) => {
+      if (mounted && items.data && items.data.newsList) {
+        setCategoryNews(items.data.newsList);
+      }
+    });
+    return () => (mounted = false);
+  }, []);
+
+  // console.log("listOfCategories - ");
+  // console.log(listOfCategories);
   let category_func = [
     {
       category: "Sports",
@@ -216,7 +234,6 @@ function Home() {
                   {item.content || item.description}
                 </text>
               </Item2>
-
               <Item2 id={item.id}>
                 <text className="news-title">{item.title}</text>
 

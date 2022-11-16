@@ -7,3 +7,9 @@ const baseUrl = "https://unified-server.herokuapp.com";
 export const getTrendingnews = async (country) => {
   return await doGet(baseUrl + "/unified/v1/news/trending?country=" + country);
 };
+
+export const getCategorynews = async (listOfCategories) => {
+  return await doGet(
+    baseUrl + " /unified/v1/news/category?categories=" + listOfCategories
+  );
+};
