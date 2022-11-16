@@ -6,8 +6,8 @@ import Carousel from "react-elastic-carousel";
 import Item from "../components/items";
 import Item1 from "../components/carousal-1-item";
 import Item2 from "../components/items2";
-import background from "../static/background_4.jpg";
 import trending from "../static/trend.png";
+import unavailableImage from "../static/unavailable-image.jpeg";
 
 import { getTrendingnews } from "../utils/newsUtils";
 import { getCategorynews } from "../utils/newsUtils";
@@ -21,12 +21,48 @@ const breakPoints = [
 
 function Home() {
   const [trendingNews, setTrendingNews] = useState([]);
+
+  const [categoryNews, setCategoryNews] = useState([]);
+
   useEffect(() => {
     let mounted = true;
     let country = localStorage.getItem("country");
-    getTrendingnews(country).then((items) => {
-      if (mounted && items.data && items.data.newsList) {
-        setTrendingNews(items.data.newsList);
+    getTrendingnews(country).then((response) => {
+      if (mounted && response.data && response.data.newsList) {
+        let news = response.data.newsList;
+        news.map(element => {
+          if (!element.urlToImage) {
+            element.urlToImage = unavailableImage;
+          }
+          if (!element.content) {
+            element.content = element.description;
+          }
+        });
+        setTrendingNews(response.data.newsList);
+      }
+    });
+    let listOfCategories = localStorage.getItem("selectedCategories");
+    console.log("listOfCategories - ");
+    console.log(listOfCategories);
+    getCategorynews(listOfCategories).then((response) => {
+      console.log("categoryNews - ")
+      console.log(response);
+      if (mounted && response.data && response.data.categoryNews) {
+        let news = response.data.categoryNews;
+        news.map(cat => {
+          console.log("cat");
+          console.log(cat);
+          cat.newsList.map(element => {
+            if (!element.urlToImage) {
+              element.urlToImage = unavailableImage;
+            }
+            if (!element.content) {
+              element.content = element.description;
+            }
+          });
+        });
+        setCategoryNews(news);
+        console.log("Cat News 2");
       }
     });
     return () => (mounted = false);
@@ -35,147 +71,16 @@ function Home() {
   console.log("trendingNews - ");
   console.log(trendingNews);
 
-  const [categoryNews, setCategoryNews] = useState([]);
-  useEffect(() => {
-    let mounted = true;
-    let listOfCategories = localStorage.getItem("selectedCategories");
-    console.log("listOfCategories - ");
-    console.log(listOfCategories);
-    getCategorynews(listOfCategories).then((items) => {
-      if (mounted && items.data && items.data.newsList) {
-        setCategoryNews(items.data.newsList);
-      }
-    });
-    return () => (mounted = false);
-  }, []);
-
-  // console.log("listOfCategories - ");
-  // console.log(listOfCategories);
-  let category_func = [
-    {
-      category: "Sports",
-      listofnews: [
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-      ],
-    },
-    {
-      category: "Science",
-      listofnews: [
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-      ],
-    },
-    {
-      category: "Hollywood",
-      listofnews: [
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-        {
-          id: "5",
-          title: "sports1",
-          url: "https://www.google.com",
-          urlToImage: background,
-          author: "Srikanth",
-          description: "description",
-          content: "content",
-          publishedAtEpoch: 1668192430,
-          sourceName: "sourceName1",
-        },
-      ],
-    },
-  ];
-
+  console.log("Cat News");
+  console.log(categoryNews);
   let categorynews = (
     <div>
-      {category_func.map((cat) => (
+      {categoryNews.map((cat) => (
         <div className="Carousel-1">
           <div className="Carousel-text1">{cat.category}</div>
 
           <Carousel breakPoints={breakPoints}>
-            {cat.listofnews.map((item) => (
+            {cat.newsList.map((item) => (
               <Item>
                 <Item2 id={item.id}>
                   <img
