@@ -18,7 +18,6 @@ function LoginButton() {
         console.log("Google Login Sucess! Current user:", profile);
         responseFromServer = await getUserDetails(profile.email);
         console.log("response from server: ", responseFromServer);
-
         if (responseFromServer.data) {
             console.log("old user");
             console.log(responseFromServer.data);
@@ -26,11 +25,7 @@ function LoginButton() {
             localStorage.setItem("name", responseFromServer.data.name);
             localStorage.setItem("id", responseFromServer.data.id);
             localStorage.setItem("country", responseFromServer.data.location);
-            let newsResponse = await getTrendingnews(
-                responseFromServer.data.location
-            );
-            localStorage.setItem("trendingNewsList", JSON.stringify(newsResponse.data.newsList));
-            console.log("trendingNewsList: ", newsResponse.data.newsList);
+            localStorage.setItem("selectedCategories", responseFromServer.data.userInterests)
         } else {
             console.log("new user");
             console.log(responseFromServer.data);
