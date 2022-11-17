@@ -117,13 +117,15 @@ function Home() {
 
       <div className="Carousel-trendingnews">
         <div className="Carousel-0">
-          <div className="Carousel-text0">Trending News</div>
-          <img
-            className="trending-icon"
-            src={trending}
-            width="20"
-            height="20"
-          ></img>
+          <div className="Carousel-text0">Trending News
+            <img
+              className="trending-icon"
+              src={trending}
+              width="20"
+              height="20"
+            ></img>
+          </div>
+
         </div>
         <Carousel breakPoints={breakPoints}>
           {trendingNews.map((item) => (
