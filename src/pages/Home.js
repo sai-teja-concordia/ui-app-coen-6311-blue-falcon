@@ -116,7 +116,7 @@ function Home() {
       </div>
 
       <div className="Carousel-trendingnews">
-        <div className="Carousel-text-image">
+        <div className="Carousel-0">
           <div className="Carousel-text0">Trending News</div>
           <img
             className="trending-icon"
