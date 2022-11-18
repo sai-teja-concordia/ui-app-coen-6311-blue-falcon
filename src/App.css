@@ -206,6 +206,7 @@ select:-moz-focusring {
 
   height: 55vh;
   width: 100%;
+  padding-top: 5%;
 
   /* float: left; */
 }
@@ -253,7 +254,8 @@ select:-moz-focusring {
 .News-categories-headline {
   font-size: 5vh;
   padding-left: 6%;
-  padding-bottom: 1%;
+  padding-bottom: 5%;
+
   color: rgb(0, 0, 0);
 }
 
@@ -267,7 +269,7 @@ select:-moz-focusring {
 .news-content {
   width: 35vh;
 
-  height: 29vh;
+  height: 28vh;
 }
 .Readmore {
   padding-bottom: 10%;
