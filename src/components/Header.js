@@ -4,7 +4,6 @@ import "./Header.css";
 import { CSSTransition } from "react-transition-group";
 import LogoutButton from "../components/logout";
 
-
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -19,22 +18,24 @@ export default function Header() {
     };
   }, []);
 
-  const handleMediaQueryChange = mediaQuery => {
+  const handleMediaQueryChange = (mediaQuery) => {
     if (mediaQuery.matches) {
       setIsSmallScreen(true);
     } else {
       setIsSmallScreen(false);
     }
   };
-  let name = localStorage.getItem('givenName')
-  let userProfilePic = localStorage.getItem('imageUrl')
-  console.log(userProfilePic)
+  let name = localStorage.getItem("givenName");
+  let userProfilePic = localStorage.getItem("imageUrl");
+  console.log(userProfilePic);
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);
   };
   return (
     <header className="Header">
-      <a className="Uni" href="/Home">Unified Social Media</a>
+      <a className="Uni" href="/Home">
+        Unified Social Media
+      </a>
       {/* <img src={require("../assets/logo.png")} className="Logo" alt="logo" /> */}
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
@@ -42,20 +43,16 @@ export default function Header() {
         classNames="NavAnimation"
         unmountOnExit
       >
-
-
-
         <nav className="Nav">
-
           {/* <a className="Uni">Unified Social Media</a> */}
-          {/* <a href="/Home">Home</a> */}
+          <a href="/Social">Friends</a>
           <a href="/Profile">
             <img
               src={userProfilePic}
               alt={name}
               style={{
                 borderRadius: "100%",
-                width: "50%"
+                width: "50%",
               }}
             />
           </a>
