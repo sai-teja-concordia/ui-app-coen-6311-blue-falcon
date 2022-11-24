@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { useParams } from 'react-router-dom';
 
 import { useEffect, useState } from "react";
-import { getUserById, getUserDetails, getUserfriends } from "../utils/user";
+import { getUserById } from "../utils/user";
 
 function UserProfile() {
   const [user, setUser] = useState([]);

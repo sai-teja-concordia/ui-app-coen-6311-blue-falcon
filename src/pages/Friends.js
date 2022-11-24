@@ -4,10 +4,13 @@ import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
-import { getUserfriends } from "../utils/user";
+import { getUserSocial } from "../utils/user";
 
 function Friends() {
-  const [Userfriends, setUserFriends] = useState([]);
+  const [userFriends, setUserFriends] = useState([]);
+  const [userFollowers, setUserFollowers] = useState([]);
+  const [userFollowing, setUserFollowing] = useState([]);
+  const [userBlocked, setUserBlocked] = useState([]);
 
   useEffect(() => {
     let mounted = true;
@@ -15,27 +18,29 @@ function Friends() {
     console.log("userid - ");
     console.log(userId);
 
-    getUserfriends(userId).then((response) => {
+    getUserSocial(userId).then((response) => {
       if (mounted && response.data) {
-        setUserFriends(response.data);
-        let friends = response.data.map(friend => friend.id)
-        localStorage.setItem("friends", friends.toString());
+        let friends = response.data.friends
+        let followers = response.data.followers
+        let following = response.data.following
+        let blocked = response.data.blocked
+        setUserFriends(friends);
+        setUserBlocked(blocked);
+        setUserFollowers(followers);
+        setUserFollowing(following);
+        let friendsIds = friends.map(friend => friend.id)
+        localStorage.setItem("friends", friendsIds.toString());
       }
     });
 
     return () => (mounted = false);
   }, []);
 
-  const listItems = Userfriends.map((friend) => (
+  const listItems = userFriends.map((friend) => (
     <li>
       <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
     </li>
   ));
-
-  let frnd = localStorage.getItem("friends");
-  // let frndid = localStorage.getItem("friendid");
-  console.log("f:");
-  console.log(frnd);
 
   return (
     <div>
