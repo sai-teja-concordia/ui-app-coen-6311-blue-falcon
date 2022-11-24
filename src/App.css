@@ -308,3 +308,7 @@ ul li {
 .friends-list {
   align-items: left;
 }
+.friends-header {
+  padding-top: 1%;
+  align-items: left;
+}

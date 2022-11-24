@@ -41,6 +41,7 @@ function Friends() {
       <div>
         <Header></Header>
       </div>
+
       <div className="main">
         <div className="search">
           <TextField
@@ -50,6 +51,9 @@ function Friends() {
             label="Search"
           />
         </div>
+      </div>
+      <div className="friends-header">
+        <h1>Meet your friends!</h1>
       </div>
       <div className="friends-list">
         <ul>{listItems}</ul>
