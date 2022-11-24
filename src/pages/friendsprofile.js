@@ -5,7 +5,7 @@ import { TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getUserfriends } from "../utils/user";
 
-function Friends() {
+function Friendsprofile() {
   const [Userfriends, setUserFriends] = useState([]);
 
   useEffect(() => {
@@ -68,4 +68,4 @@ function Friends() {
   );
 }
 
-export default Friends;
+export default Friendsprofile;
