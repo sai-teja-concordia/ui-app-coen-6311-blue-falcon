@@ -274,6 +274,12 @@ select:-moz-focusring {
 .Readmore {
   padding-bottom: 10%;
 }
+.bookmark {
+  height: 3vh;
+}
+.bookmark.button {
+  align-items: right;
+}
 /*...search bar css.*/
 .main {
   padding-top: 5%;

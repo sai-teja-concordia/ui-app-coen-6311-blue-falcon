@@ -8,6 +8,7 @@ import Item1 from "../components/carousal-1-item";
 import Item2 from "../components/items2";
 import trending from "../static/trend.png";
 import unavailableImage from "../static/unavailable-image.jpeg";
+import bookmarkImage from "../static/bookmark.svg";
 
 import { getTrendingnews } from "../utils/newsUtils";
 import { getCategorynews } from "../utils/newsUtils";
@@ -104,6 +105,16 @@ function Home() {
                     Read more
                   </a>
                 </Item2>
+                <Item2 id={item.id}>
+                  <button>
+                    <img
+                      className="bookmark"
+                      src={bookmarkImage}
+                      alt="my image"
+                      // onClick={this.myfunction}
+                    />
+                  </button>
+                </Item2>
               </Item1>
             ))}
           </Carousel>
@@ -159,6 +170,16 @@ function Home() {
                 >
                   Read more
                 </a>
+              </Item2>
+              <Item2 id={item.id}>
+                <button>
+                  <img
+                    className="bookmark"
+                    src={bookmarkImage}
+                    alt="my image"
+                    // onClick={this.myfunction}
+                  />
+                </button>
               </Item2>
             </Item1>
           ))}
