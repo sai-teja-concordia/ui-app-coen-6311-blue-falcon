@@ -21,3 +21,6 @@ export const getUsertrendingnews = async (country) => {
     baseUrl + "/unified/v1/news/trending?country={canada}" + country
   );
 };
+export const getUserfriends = async (userId) => {
+  return await doGet(baseUrl + "/unified/v1/users/friends?userId=" + userId);
+};

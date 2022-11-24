@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Newuser from "./pages/Newuser";
 import Profile from "./pages/Profile";
 import Friends from "./pages/Friends";
+import Friendsprofile from "./pages/friendsprofile";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/Profile" element={<Profile />} />
       <Route path="/Newuser" element={<Newuser />} />
       <Route path="/Friends" element={<Friends />} />
+      <Route path="/Friendsprofile" element={<Friendsprofile />} />
     </Routes>
   );
 }
