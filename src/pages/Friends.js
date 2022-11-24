@@ -18,18 +18,23 @@ function Friends() {
       if (mounted && response.data) {
         setUserFriends(response.data);
       }
+
+      localStorage.setItem("friends", response.data);
     });
 
     return () => (mounted = false);
   }, []);
 
-  console.log("userfriends - ");
-  console.log(Userfriends);
   const listItems = Userfriends.map((names) => (
     <li>
       <a href="/Friendsprofile">{names.name}</a>
     </li>
   ));
+
+  let frnd = localStorage.getItem("friends");
+  // let frndid = localStorage.getItem("friendid");
+  console.log("f:");
+  console.log(frnd);
 
   return (
     <div>
