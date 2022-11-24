@@ -24,6 +24,7 @@ function UserProfile() {
     getUserById(id).then((response) => {
       if (mounted && response.data) {
         setUser(response.data);
+        console.log(response.data)
       }
     });
     return () => (mounted = false);

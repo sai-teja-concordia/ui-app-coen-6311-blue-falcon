@@ -30,10 +30,10 @@
 .Nav {
   display: grid;
   grid-area: nav;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
   align-items: center;
   justify-items: center;
-  grid-area: none;
+  grid-area: auto;
   grid-template-areas: " logo nav";
 }
 

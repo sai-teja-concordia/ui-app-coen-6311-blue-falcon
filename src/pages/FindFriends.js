@@ -48,15 +48,16 @@ function Friends() {
         <Header></Header>
       </div>
 
-      <div className="friends-content">
-        <div className="friends-header">
-          <h1>Meet your friends!</h1>
-        </div>
-        <div className="friends-list">
-          <ul>{listItems}</ul>
+      <div className="search-main">
+        <div className="search">
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            fullWidth
+            label="Search for friends"
+          />
         </div>
       </div>
-
     </div>
   );
 }

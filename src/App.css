@@ -286,7 +286,7 @@ select:-moz-focusring {
   align-items: right;
 }
 /*...search bar css.*/
-.main {
+.search-main {
   padding-top: 5%;
   display: flex;
   height: 10vh;
@@ -294,6 +294,16 @@ select:-moz-focusring {
   align-items: center;
   flex-direction: column;
   row-gap: 20px;
+}
+
+.friends-content{
+  padding-top: 5%;
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  row-gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 h1 {

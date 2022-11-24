@@ -45,6 +45,7 @@ export default function Header() {
       >
         <nav className="Nav">
           {/* <a className="Uni">Unified Social Media</a> */}
+          <a href="/FindFriends">Find Friends</a>
           <a href="/Friends">Social</a>
           <a href="/Profile">
             <img
