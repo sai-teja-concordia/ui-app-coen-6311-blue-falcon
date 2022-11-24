@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { TextField } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import { getUserfriends } from "../utils/user";
@@ -17,17 +18,17 @@ function Friends() {
     getUserfriends(userId).then((response) => {
       if (mounted && response.data) {
         setUserFriends(response.data);
+        let friends = response.data.map(friend => friend.id)
+        localStorage.setItem("friends", friends.toString());
       }
-
-      localStorage.setItem("friends", response.data);
     });
 
     return () => (mounted = false);
   }, []);
 
-  const listItems = Userfriends.map((names) => (
+  const listItems = Userfriends.map((friend) => (
     <li>
-      <a href="/Friendsprofile">{names.name}</a>
+      <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
     </li>
   ));
 
