@@ -27,7 +27,7 @@ export default function Header() {
   };
   let name = localStorage.getItem("givenName");
   let userProfilePic = localStorage.getItem("imageUrl");
-  console.log(userProfilePic);
+  // console.log(userProfilePic);
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);
   };

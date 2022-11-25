@@ -4,42 +4,43 @@ import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
-import { getUserSocial } from "../utils/user";
+import { getUserByName } from "../utils/user";
 
 function Friends() {
   const [userFriends, setUserFriends] = useState([]);
-  const [userFollowers, setUserFollowers] = useState([]);
-  const [userFollowing, setUserFollowing] = useState([]);
-  const [userBlocked, setUserBlocked] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    let mounted = true;
-    let userId = localStorage.getItem("id");
-    console.log("userid - ");
-    console.log(userId);
-
-    getUserSocial(userId).then((response) => {
-      if (mounted && response.data) {
-        let friends = response.data.friends
-        let followers = response.data.followers
-        let following = response.data.following
-        let blocked = response.data.blocked
-        setUserFriends(friends);
-        setUserBlocked(blocked);
-        setUserFollowers(followers);
-        setUserFollowing(following);
-        let friendsIds = friends.map(friend => friend.id)
-        localStorage.setItem("friends", friendsIds.toString());
-      }
-    });
-
-    return () => (mounted = false);
-  }, []);
+  const keyPress = (e) => {
+    if (e.keyCode == 13) {
+      let query = e.target.value;
+      console.log('value', e.target.value);
+      setSearchQuery(query);
+      let userId = localStorage.getItem("id");
+      // put the login here
+      getUserByName(query).then((response) => {
+        console.log(response);
+        let searchList = response.data
+        let friends = searchList.filter(friend => {
+          return friend.id != userId
+        })
+        setUserFriends(friends)
+      })
+    }
+  }
 
   const listItems = userFriends.map((friend) => (
-    <li>
-      <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
-    </li>
+    <table className="table table-striped table-bordered">
+      <tbody>
+        <tr key={friend.id}>
+          <td><img class="profile" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
+          <td><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
+        </tr>
+      </tbody>
+    </table>
+    // <li>
+
+    //   <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
+    // </li>
   ));
 
   return (
@@ -55,7 +56,17 @@ function Friends() {
             variant="outlined"
             fullWidth
             label="Search for friends"
+            onKeyDown={keyPress}
+          // onChange={(e) => {
+          //   setSearchQuery(e.target.value);
+          // }}
+          // onInput={(e) => {
+          //   setSearchQuery(e.target.value);
+          // }}
           />
+        </div>
+        <div>
+          {listItems}
         </div>
       </div>
     </div>

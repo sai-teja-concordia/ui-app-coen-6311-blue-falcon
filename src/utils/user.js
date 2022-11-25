@@ -7,6 +7,10 @@ export const getUserDetails = async (email) => {
   return await doGet(baseUrl + "/unified/v1/users?emailId=" + email);
 };
 
+export const getUserByName = async (name) => {
+  return await doGet(baseUrl + "/unified/v1/users/search?query=" + name);
+};
+
 export const getUserById = async (id) => {
   return await doGet(baseUrl + "/unified/v1/users/" + id);
 };
