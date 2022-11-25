@@ -37,11 +37,11 @@ function Friends() {
   }, []);
 
   const listItems = userFriends.map((friend) => (
-    <table className="table table-striped table-bordered">
+    <table className="table table-striped table-bordered styled-table">
       <tbody>
         <tr key={friend.id}>
-          <td><img class="profile-pic" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
-          <td><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
+          <td class="td-pic"><img class="profile-pic" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
+          <td class="td-name"><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
         </tr>
       </tbody>
     </table>
@@ -58,7 +58,7 @@ function Friends() {
           <h1>Meet your friends!</h1>
         </div>
         <div className="friends-list">
-          <ul>{listItems}</ul>
+          {listItems}
         </div>
       </div>
 
