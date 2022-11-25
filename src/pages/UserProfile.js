@@ -36,7 +36,7 @@ function UserProfile() {
       <div className="User-Profile">
         <li>
           <a>{user.name}</a>{" "}
-          <img src={user.imageUrl} width="50" height="50"></img>
+          <img class="profile-pic" src={user.imageUrl} width="50" height="50"></img>
           <li>
             {" "}
             <a>{user.emailId}</a>

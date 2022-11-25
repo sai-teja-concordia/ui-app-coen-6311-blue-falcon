@@ -37,9 +37,14 @@ function Friends() {
   }, []);
 
   const listItems = userFriends.map((friend) => (
-    <li>
-      <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
-    </li>
+    <table className="table table-striped table-bordered">
+      <tbody>
+        <tr key={friend.id}>
+          <td><img class="profile-pic" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
+          <td><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
+        </tr>
+      </tbody>
+    </table>
   ));
 
   return (
