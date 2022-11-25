@@ -41,7 +41,7 @@ function Friends() {
         <tr key={friend.id}>
           <td class="td-pic"><img class="profile-pic" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
           <td class="td-name"><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
-          <td class="td-interests">{friend.userInterests.join(" ")}</td>
+          <td class="td-interests">{friend.userInterests.join(", ")}</td>
         </tr>
       </tbody>
     </table>
