@@ -27,31 +27,32 @@ function UserProfile() {
         console.log(response.data)
       }
     });
+
     return () => (mounted = false);
   }, []);
+
   return (
     <div>
       <div>
         <Header></Header>
       </div>
       <div className="User-Profile">
-        <li>
-          <a>{user.name}</a>{" "}
-          <img class="profile-pic" src={user.imageUrl} width="50" height="50"></img>
-          <li>
-            {" "}
-            <a>{user.emailId}</a>
-          </li>
-          <li>
-            {user.userInterests}
-          </li>
-          <li>
-            <a>{user.location}</a>
-          </li>
-          <li>
-            {friendStatus}
-          </li>
-        </li>
+      <table className="User-Profile-Table">
+      <tbody>
+        <tr key={user.id}>
+          <td class="td-img"><img class="profile-pic" src={user.imageUrl} width="100" height="100" border-radius="100%" ></img></td>
+        </tr>
+        <tr key={user.id}>
+          <td class="td-user"><user to={`/UserProfile/${user.id}`}>{user.name}</user></td>
+        </tr>
+        <tr key={user.id}>
+          <td class= "td-location"><user to={`/UserProfile/${user.id}`}>{user.location}</user></td>
+        </tr>
+        <tr key={user.id}>
+        <td class="td-fav-topics">{user.userInterests.join(", ")}</td>
+        </tr>
+      </tbody>
+    </table>
       </div>
     </div>
   );
