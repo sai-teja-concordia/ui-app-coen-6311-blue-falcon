@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
-import { getUserByName } from "../utils/user";
+import { getNearByUsers, getUserByName } from "../utils/user";
 
 function Friends() {
   const [userFriends, setUserFriends] = useState([]);
@@ -27,6 +27,24 @@ function Friends() {
       })
     }
   }
+  const [nearByUsers, setNearByUsers] = useState([]);
+  useEffect(() => {
+    let mounted = true;
+    let country = localStorage.getItem("country");
+    let userId = localStorage.getItem("id");
+    getNearByUsers(country).then((response) => {
+      if (mounted && response.data) {
+        let nearByUsersResponse = response.data
+        let nearByUsersData = nearByUsersResponse.filter(friend => {
+          return friend.id != userId
+        })
+        console.log("Near By Users - ")
+        console.log(nearByUsersData)
+        setNearByUsers(nearByUsersData)
+      }
+    });
+    return () => (mounted = false);
+  }, []);
 
   let tableHeader = <thead>
     <tr>
@@ -35,16 +53,23 @@ function Friends() {
       <th class="td-interests">User Interests</th>
     </tr>
   </thead>
+
+  const nearByUsersList = nearByUsers.map((user) => (
+    <tr key={user.id}>
+      <td class="td-pic"><img class="profile-pic" src={user.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
+      <td class="td-name"><Link to={`/UserProfile/${user.id}`}>{user.name}</Link></td>
+      <td class="td-interests">{user.userInterests.join(", ")}</td>
+    </tr>
+  ));
+
   const listItems = userFriends.map((friend) => (
-    <table className="table table-striped table-bordered styled-table">
-      <tbody>
-        <tr key={friend.id}>
-          <td class="td-pic"><img class="profile-pic" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
-          <td class="td-name"><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
-          <td class="td-interests">{friend.userInterests.join(", ")}</td>
-        </tr>
-      </tbody>
-    </table>
+
+    <tr key={friend.id}>
+      <td class="td-pic"><img class="profile-pic" src={friend.imageUrl} width="50" height="50" border-radius="50%" ></img></td>
+      <td class="td-name"><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
+      <td class="td-interests">{friend.userInterests.join(", ")}</td>
+    </tr>
+
     // <li>
 
     //   <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
@@ -75,7 +100,26 @@ function Friends() {
         </div>
         <div>
           {tableHeader}
-          {listItems}
+          <table className="table table-striped table-bordered styled-table">
+            <tbody>
+              {listItems}
+            </tbody>
+          </table>
+
+        </div>
+
+        <div>
+          <div>
+            <h1>Near By Users</h1>
+          </div>
+          <table className="table table-striped table-bordered styled-table">
+            {tableHeader}
+            <tbody>
+              {nearByUsersList}
+            </tbody>
+          </table>
+
+
         </div>
       </div>
     </div>

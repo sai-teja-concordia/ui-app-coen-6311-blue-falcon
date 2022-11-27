@@ -7,6 +7,10 @@ export const getUserDetails = async (email) => {
   return await doGet(baseUrl + "/unified/v1/users?emailId=" + email);
 };
 
+export const getNearByUsers = async (country) => {
+  return await doGet(baseUrl + "/unified/v1/users/near-me?location=" + country);
+};
+
 export const getUserByName = async (name) => {
   return await doGet(baseUrl + "/unified/v1/users/search?query=" + name);
 };
