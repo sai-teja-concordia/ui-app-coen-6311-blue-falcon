@@ -220,6 +220,17 @@ styled-table td {
 .td-friends {
   width: 80px;
 }
+a.button {
+  background-color: #3c5997;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  appearance: button;
+  text-decoration: none;
+}
 
 .td-pic {
   width: 50px;

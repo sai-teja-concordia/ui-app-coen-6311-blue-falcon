@@ -299,8 +299,7 @@ class Newuser extends React.Component {
           <a href="/Home"></a>
         </nav>
         <div>
-
-          <a href="/Home" >Done!</a>
+          <a href="/Home" class="button">Done</a>
         </div>
       </div>
 

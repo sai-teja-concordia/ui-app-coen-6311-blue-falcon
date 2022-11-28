@@ -288,7 +288,7 @@ class Profile extends React.Component {
                         />
                     </li>
                 </ul>
-                <a href="/Home" >Done!</a>
+                <a href="/Home" class="button">Done</a>
             </div>
         </div>
     }
