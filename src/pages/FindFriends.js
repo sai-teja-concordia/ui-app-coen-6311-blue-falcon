@@ -69,11 +69,6 @@ function Friends() {
       <td class="td-name"><Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link></td>
       <td class="td-interests">{friend.userInterests.join(", ")}</td>
     </tr>
-
-    // <li>
-
-    //   <Link to={`/UserProfile/${friend.id}`}>{friend.name}</Link>
-    // </li>
   ));
 
   return (

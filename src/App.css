@@ -167,19 +167,26 @@ select:-moz-focusring {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 250px;
+  width: 50%;
   height: 400px;
   border-radius: 22px;
   padding: 10px;
-  box-shadow: 0 0 100px rgb(13, 43, 194);
-  background: rgb(183, 241, 247);;
+  box-shadow: 0 0 100px rgb(60 89 151);
+  background: rgb(255 255 255);
   overflow: hidden;
 }
 .profile-pic{
   border-radius: 50%;
 }
+
+.approve-reject{
+  padding: 0;
+  border: none;
+  background: none;
+}
+
 table, th, td {
-	border:1px solid;
+	border:1px ;
 }
 .styled-table th,
 styled-table td {
@@ -209,6 +216,9 @@ styled-table td {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     table-layout: fixed;
 
+}
+.td-friends {
+  width: 80px;
 }
 
 .td-pic {

@@ -11,6 +11,16 @@ export const getNearByUsers = async (country) => {
   return await doGet(baseUrl + "/unified/v1/users/near-me?location=" + country);
 };
 
+export const actionFriendRequest = async (body) => {
+  // console.log(body);
+  return await doPatch(baseUrl + "/unified/v1/users/friends", body);
+};
+
+export const sendFriendRequest = async (body) => {
+  // console.log(body);
+  return await doPost(baseUrl + "/unified/v1/users/friends", body);
+};
+
 export const getUserByName = async (name) => {
   return await doGet(baseUrl + "/unified/v1/users/search?query=" + name);
 };
