@@ -10,7 +10,6 @@ import nameIcon from "../static/name.png";
 function UserProfile() {
   const [user, setUser] = useState([]);
   const { id } = useParams();
-  const [friendStatus, setFriendStatus] = useState("");
   const [userFriends, setUserFriends] = useState([]);
   const [favNews, setFavNews] = useState([]);
 
@@ -30,13 +29,10 @@ function UserProfile() {
     let requestSent = sentRequests.includes(id)
     setAreFriends(areFriendsBoolean)
     if (areFriendsBoolean) {
-      setFriendStatus("You are friends")
       setButtonText("UnFriend")
     } else if (requestSent) {
-      setFriendStatus("Friend Request Sent")
       setButtonText("Friend Request Sent")
     } else {
-      setFriendStatus("You are not friends")
       setButtonText("Add Friend")
 
     }
@@ -73,6 +69,25 @@ function UserProfile() {
     </li>
 
   ));
+
+  let otherDetails = ""
+  if (areFriends) {
+    otherDetails = <div>
+      <table> <tbody>
+        <tr class="tr-friends">
+          <h3>Friends</h3>
+        </tr>
+        <tr class="tr-friends">
+          {userFriendsTable}
+        </tr>
+      </tbody>
+      </table>
+      <h3>Saved News</h3>
+      <ul>
+        {favouriteNews}
+      </ul>
+    </div>
+  }
   const handleClick = async () => {
     if (areFriends) {
       // Unfriending
@@ -90,7 +105,6 @@ function UserProfile() {
       window.location.reload("false")
     } else {
       // Sending Friend Request
-      setAreFriends(true)
       setButtonText("Friend Request Sent")
       let request = {}
       request.fromUserId = localStorage.getItem("id")
@@ -131,30 +145,7 @@ function UserProfile() {
             </tr>
           </tbody>
         </table>
-        <table>
-          <tbody>
-            <tr class="tr-friends">
-              <h3>Friends</h3>
-            </tr>
-            <tr class="tr-friends">
-              {userFriendsTable}
-            </tr>
-          </tbody>
-        </table>
-        <h3>Saved News</h3>
-        <ul>
-          {favouriteNews}
-        </ul>
-        <table>
-          <tbody>
-            <tr>
-
-            </tr>
-            <tr>
-
-            </tr>
-          </tbody>
-        </table>
+        {otherDetails}
       </div>
     </div >
   );
