@@ -19,6 +19,22 @@ import scienceIcon from "../static/science.png";
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        let favNews = JSON.parse(localStorage.getItem("savedNews"))
+        let savedNewsDiv = ""
+        if (favNews) {
+            savedNewsDiv = <div className='profileTable'>
+                <h3>Saved News</h3>
+                <ul>
+                    {favNews.map((news) => (
+                        <li>
+                            <a href={news.url} target="_blank" rel="noreferrer">{news.title}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            // favNewsDiv = 
+        }
+
         let coutriesTempList = []
         for (let [key, value] of Object.entries(countries.countries)) {
             let country = {}
@@ -28,7 +44,7 @@ class Profile extends React.Component {
         }
         // localStorage.setItem("selectedCategories", ['sports'])
         let selectedCategories = localStorage.getItem('selectedCategories')
-        console.log(selectedCategories);
+        // console.log(selectedCategories);
         let selectedCheckBoxesDict = {}
         if (selectedCategories) {
 
@@ -36,12 +52,14 @@ class Profile extends React.Component {
                 selectedCheckBoxesDict[element] = true
             });
         }
-        console.log(selectedCheckBoxesDict);
+        // console.log(selectedCheckBoxesDict);
 
         this.state = {
             selectedCountry: localStorage.getItem('country'),
             countriesList: coutriesTempList,
-            selectedCheckBoxes: selectedCheckBoxesDict
+            selectedCheckBoxes: selectedCheckBoxesDict,
+            savedNewsDiv: savedNewsDiv
+
         }
         this._handleFocus = this._handleFocus.bind(this);
         this._handleFocusOut = this._handleFocusOut.bind(this);
@@ -49,11 +67,11 @@ class Profile extends React.Component {
         this.updateCountry = this.updateCountry.bind(this);
         this.checkBoxUpdate = this.checkBoxUpdate.bind(this);
 
-        console.log(`localStorage.getItem('isNewUser') - ${localStorage.getItem('isNewUser')}`);
+        // console.log(`localStorage.getItem('isNewUser') - ${localStorage.getItem('isNewUser')}`);
         this.email = localStorage.getItem('email')
         this.name = localStorage.getItem('name')
         this.userProfilePic = localStorage.getItem('imageUrl')
-        console.log(this.userProfilePic)
+        // console.log(this.userProfilePic)
     }
 
     _handleFocus(text) {
@@ -289,7 +307,9 @@ class Profile extends React.Component {
                     </li>
                 </ul>
                 <a href="/Home" class="button">Done</a>
+
             </div>
+            {this.state.savedNewsDiv}
         </div>
     }
 }

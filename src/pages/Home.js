@@ -12,6 +12,8 @@ import bookmarkImage from "../static/bookmark.svg";
 
 import { getTrendingnews } from "../utils/newsUtils";
 import { getCategorynews } from "../utils/newsUtils";
+import { getUserById, getUserSocial } from "../utils/user";
+
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -28,6 +30,20 @@ function Home() {
   useEffect(() => {
     let mounted = true;
     let country = localStorage.getItem("country");
+    let userId = localStorage.getItem("id");
+
+    getUserById(userId).then((response) => {
+      if (mounted && response.data) {
+        let { friends, sentRequests, savedNews } = response.data
+
+        localStorage.setItem("savedNews", JSON.stringify(savedNews))
+        let friendsIds = friends.map(friend => friend.id)
+        localStorage.setItem("friends", friendsIds.toString());
+        let sentIds = sentRequests.map(friend => friend.id)
+        localStorage.setItem("sentRequests", sentIds.toString());
+      }
+    });
+
     getTrendingnews(country).then((response) => {
       if (mounted && response.data && response.data.newsList) {
         let news = response.data.newsList;
@@ -111,7 +127,7 @@ function Home() {
                       className="bookmark"
                       src={bookmarkImage}
                       alt="my image"
-                      // onClick={this.myfunction}
+                    // onClick={this.myfunction}
                     />
                   </button>
                 </Item2>
@@ -177,7 +193,7 @@ function Home() {
                     className="bookmark"
                     src={bookmarkImage}
                     alt="my image"
-                    // onClick={this.myfunction}
+                  // onClick={this.myfunction}
                   />
                 </button>
               </Item2>
