@@ -120,6 +120,10 @@ class Profile extends React.Component {
             }
             console.log(` ${checked} ${value}`);
             this.state.selectedCheckBoxes[value] = !this.state.selectedCheckBoxes[value]
+            this.setState(state => {
+                return {
+                };
+            });
             console.log(this.state.selectedCheckBoxes);
             if (checked) {
                 selectedCategories.add(value)
