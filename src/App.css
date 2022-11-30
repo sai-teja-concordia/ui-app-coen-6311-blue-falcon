@@ -220,6 +220,19 @@ styled-table td {
 .td-friends {
   width: 80px;
 }
+
+a.share-button {
+  /* background-color: #3c5997; */
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  appearance: button;
+  text-decoration: none;
+}
+
 a.button {
   background-color: #3c5997;
   color: white;
@@ -230,6 +243,28 @@ a.button {
   font-size: 16px;
   appearance: button;
   text-decoration: none;
+}
+
+.inviteDiv {
+  padding: 5px;
+}
+.copyField {
+  padding: 5px;
+  border: 3px solid #555;
+  background-color: white;
+  border-radius: 4px;
+  height: 30px;
+  width: 550px;
+}
+
+
+.content-Invite {
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-right: 25%;
+  width: 80%;
+  padding: 10px;
 }
 
 .td-pic {

@@ -47,6 +47,7 @@ export default function Header() {
           {/* <a className="Uni">Unified Social Media</a> */}
           <a href="/FindFriends">Find Friends</a>
           <a href="/Friends">Social</a>
+          <a href="/Invite">Invite</a>
           <a href="/Profile">
             <img
               src={userProfilePic}

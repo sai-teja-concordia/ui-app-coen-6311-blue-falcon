@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import Friends from "./pages/Friends";
 import UserProfile from "./pages/UserProfile";
 import FindFriends from "./pages/FindFriends";
+import Invite from "./pages/Invite";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/Profile" element={<Profile />} />
       <Route path="/Newuser" element={<Newuser />} />
       <Route path="/Friends" element={<Friends />} />
+      <Route path="/Invite" element={<Invite />} />
 
       <Route path="/FindFriends" element={<FindFriends />} />
       <Route path="/UserProfile/:id" element={<UserProfile />} />
