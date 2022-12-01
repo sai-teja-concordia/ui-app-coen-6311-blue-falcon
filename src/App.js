@@ -8,6 +8,7 @@ import Friends from "./pages/Friends";
 import UserProfile from "./pages/UserProfile";
 import FindFriends from "./pages/FindFriends";
 import Invite from "./pages/Invite";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/Newuser" element={<Newuser />} />
       <Route path="/Friends" element={<Friends />} />
       <Route path="/Invite" element={<Invite />} />
+      <Route path="/Chat" element={<Chat />} />
 
       <Route path="/FindFriends" element={<FindFriends />} />
       <Route path="/UserProfile/:id" element={<UserProfile />} />

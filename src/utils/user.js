@@ -46,3 +46,11 @@ export const getUsertrendingnews = async (country) => {
 export const getUserSocial = async (userId) => {
   return await doGet(baseUrl + "/unified/v1/users/social?userId=" + userId);
 };
+
+export const getUserMessages = async (userId) => {
+  return await doGet(baseUrl + "/unified/v1/messages?userId=" + userId);
+};
+
+export const sendMessageToUser = async (body) => {
+  return await doPost(baseUrl + "/unified/v1/messages/send", body);
+};

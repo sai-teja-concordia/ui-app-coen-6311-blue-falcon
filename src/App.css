@@ -244,7 +244,9 @@ a.button {
   appearance: button;
   text-decoration: none;
 }
-
+.chat-list {
+  width: 320px;
+}
 .inviteDiv {
   padding: 5px;
 }
@@ -257,6 +259,47 @@ a.button {
   width: 550px;
 }
 
+
+.chat-input {
+  position: absolute;
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  bottom: 10px;
+  right: 5%;
+}
+/* .chat-send-button {
+  right: 10px;
+  position: absolute;
+  
+} */
+.content-Chat {
+  text-align: center;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-right: 15%;
+  width: 90%;
+  padding: 10px;
+}
+
+
+.chat-list{
+  vertical-align:middle;
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  padding: 10px;
+}
+
+.message-list {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 60%;
+  height: 100%;
+  padding: 10px;
+}
 
 .content-Invite {
   text-align: center;
