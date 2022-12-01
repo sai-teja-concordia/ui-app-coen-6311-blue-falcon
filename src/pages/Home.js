@@ -9,11 +9,11 @@ import Item2 from "../components/items2";
 import trending from "../static/trend.png";
 import unavailableImage from "../static/unavailable-image.jpeg";
 import bookmarkImage from "../static/bookmark.svg";
+import bookmarkImage1 from "../static/bookmark1.svg";
 
 import { getTrendingnews } from "../utils/newsUtils";
 import { getCategorynews } from "../utils/newsUtils";
-import { getUserById, getUserSocial } from "../utils/user";
-
+import { getUserById, getUserSocial, saveUserNews } from "../utils/user";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -21,11 +21,13 @@ const breakPoints = [
   { width: 768, itemsToShow: 2 },
   { width: 1200, itemsToShow: 2 },
 ];
+let marked = false;
 
 function Home() {
   const [trendingNews, setTrendingNews] = useState([]);
 
   const [categoryNews, setCategoryNews] = useState([]);
+  const [buttonImage, setButtonImage] = useState("");
 
   useEffect(() => {
     let mounted = true;
@@ -34,12 +36,12 @@ function Home() {
 
     getUserById(userId).then((response) => {
       if (mounted && response.data) {
-        let { friends, sentRequests, savedNews } = response.data
+        let { friends, sentRequests, savedNews } = response.data;
 
-        localStorage.setItem("savedNews", JSON.stringify(savedNews))
-        let friendsIds = friends.map(friend => friend.id)
+        localStorage.setItem("savedNews", JSON.stringify(savedNews));
+        let friendsIds = friends.map((friend) => friend.id);
         localStorage.setItem("friends", friendsIds.toString());
-        let sentIds = sentRequests.map(friend => friend.id)
+        let sentIds = sentRequests.map((friend) => friend.id);
         localStorage.setItem("sentRequests", sentIds.toString());
       }
     });
@@ -90,6 +92,28 @@ function Home() {
 
   console.log("Cat News");
   console.log(categoryNews);
+
+  const handleClick = async () => {
+    let bookmarkedNews = {};
+
+    if (bookmarkedNews.savedNewsEnum == "UN_BOOKMARKED") {
+      setButtonImage(bookmarkImage);
+      marked = false;
+      console.log("marked");
+      bookmarkedNews.newsId = localStorage.getItem("newsId");
+      bookmarkedNews.userId = localStorage.getItem("userId");
+      bookmarkedNews.savedNewsEnum = "BOOKMARKED";
+      await saveUserNews(bookmarkedNews);
+    } else {
+      setButtonImage(bookmarkImage1);
+      marked = true;
+      console.log("unmarked");
+      bookmarkedNews.newsId = localStorage.getItem("newsId");
+      bookmarkedNews.userId = localStorage.getItem("userId");
+      bookmarkedNews.savedNewsEnum = "UN_BOOKMARKED";
+      await saveUserNews(bookmarkedNews);
+    }
+  };
   let categorynews = (
     <div>
       {categoryNews.map((cat) => (
@@ -125,9 +149,9 @@ function Home() {
                   <button>
                     <img
                       className="bookmark"
-                      src={bookmarkImage}
+                      src={buttonImage}
                       alt="my image"
-                    // onClick={this.myfunction}
+                      onClick={handleClick}
                     />
                   </button>
                 </Item2>
@@ -193,7 +217,7 @@ function Home() {
                     className="bookmark"
                     src={bookmarkImage}
                     alt="my image"
-                  // onClick={this.myfunction}
+                    // onClick={this.myfunction}
                   />
                 </button>
               </Item2>

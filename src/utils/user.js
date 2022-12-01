@@ -1,4 +1,4 @@
-import { doGet, doPatch, doPost } from "./webUtils";
+import { doGet, doPatch, doPost, doPut } from "./webUtils";
 
 const baseUrl = "https://unified-server.herokuapp.com";
 // const baseUrl = "http://localhost:8080"
@@ -45,4 +45,8 @@ export const getUsertrendingnews = async (country) => {
 };
 export const getUserSocial = async (userId) => {
   return await doGet(baseUrl + "/unified/v1/users/social?userId=" + userId);
+};
+export const saveUserNews = async (body) => {
+  console.log(`saving user news. body - ${JSON.stringify(body)}`);
+  return await doPut(baseUrl + "/unified/v1/users/news-list", body);
 };
