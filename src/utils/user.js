@@ -50,3 +50,11 @@ export const saveUserNews = async (body) => {
   console.log(`saving user news. body - ${JSON.stringify(body)}`);
   return await doPut(baseUrl + "/unified/v1/users/news-list", body);
 };
+
+export const getUserMessages = async (userId) => {
+  return await doGet(baseUrl + "/unified/v1/messages?userId=" + userId);
+};
+
+export const sendMessageToUser = async (body) => {
+  return await doPost(baseUrl + "/unified/v1/messages/send", body);
+};
